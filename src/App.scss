@@ -1,0 +1,339 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+	font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html, body {
+  /*overflow: hidden;*/
+  height: 100%;
+  width: 100%;
+}
+body {
+  line-height: 1;
+  font-family: 'Roboto', sans-serif;
+}
+ol, ul , li{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+$darkblue: #424e73;
+
+
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  
+}
+.Card {
+  display: flex;
+  background: white;
+  height: 550px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  img {
+    width: 250px;
+    height: 147px;
+    position: absolute;
+  }
+  > div {
+    margin-top: 40%;
+    border-radius: 1.5rem;
+    width: 210px;
+    height: 100%;
+    background: $darkblue;
+    margin-right: 20px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.Card > div > div {
+  width: 80%;
+  height: 50px;
+  margin-top: 8rem;
+  background: red;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.Card > div > div > div:nth-of-type(1) {
+  width: 50%;
+  height: 50px;
+  background: coral;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.Card > div > div > div:nth-of-type(2) {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+  background: plum;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.Card > div > div > div:nth-of-type(2) > p {
+  text-align: center;
+}
+.ScrollList {
+  height: 78%;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.MoreInfo {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  >div:nth-child(1) {
+    z-index: 1;
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    background: $darkblue;
+  }
+}
+.BikeDiv {
+  width: 54%;
+  z-index: 1;
+  height: 100%;
+  >div {
+    margin-left: 4rem;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-start;
+    color: white;
+  }
+  > div:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 10%;
+    width: 50%;
+    h1 {
+      font-weight: 800;
+      font-size: 1.2rem;
+      padding-right: 25%;
+      flex: 1;
+      text-align: left;
+    }
+    p {
+      margin-right: 1.3rem;
+      font-size: 0.7rem;
+    }
+  }
+  > div:nth-of-type(2) {
+    margin-top: 2rem;
+    height: 22rem;
+    width: 100%;
+    padding-left: 1rem;
+    position: relative;
+    img {
+      width: 600px;
+      height: 335px;
+      align-self: center;
+      position: absolute;
+    }
+  }
+  > div:nth-of-type(3) {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    >h1 {
+      font-size: 1.4rem;
+      font-weight: 200;
+      flex: 1;
+      text-align: left;
+    }
+    >div {
+      cursor: pointer;
+      background: #ff5e57;
+      margin-right: 1rem;
+      width: 50%;
+      height: 90%;
+      border-radius: 0.4rem;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      h1:nth-of-type(1) {
+        justify-self: center;
+        align-self: center;  
+        font-size: 2.5rem; 
+        text-align: center;
+        margin-right: 1rem; 
+      }
+      h1:nth-of-type(2) {
+        justify-self: center;
+        align-self: center;    
+      }
+    }
+  }
+}
+.ConfigDiv {
+  width: 46%;
+  height: 100%;
+  >div:nth-of-type(1) {
+    margin-left: 5rem;
+    margin-right: 2rem;
+    margin-top: 5rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+
+    >div:nth-of-type(1) {
+      height: 10%;
+      width: 100%;
+      >div {
+        display: flex;
+        height: 100%;
+        padding-left: 5%;
+        width: 18%;
+        border-radius: 0.3rem;
+        border: 2px solid #f4f2f4;
+        cursor: pointer;
+        > svg {
+          width: 1.2rem;
+          height: 1.2rem;
+          font-weight: 100;
+          align-self: center;
+        }
+        > p {
+          font-size: 0.7rem;
+          font-weight: 700;
+          align-self: center;
+          margin-left: 1rem;
+        }
+      }
+    }
+    >div:nth-of-type(2) { 
+      margin-top: 2rem;
+      height: 90%;
+      >div:nth-of-type(1) {
+        font-size: 2.2rem;
+        font-weight: 700;
+        display: flex;
+        height: 15%;
+        >h1 {
+          align-self: flex-start;
+        }
+      }
+      >div:nth-of-type(2) { 
+        height: 25%;
+        display: flex;
+        >div {
+          cursor: pointer;
+          border: 2px solid #f4f2f4;
+          margin: 10px 10px;
+          border-radius: 0.4rem;
+          background: white;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            height: 80%;
+            width: 80%;
+          }
+        }
+
+      }
+      >div:nth-of-type(3) { 
+        height: 15%;
+        display: flex;
+        >h2 {
+          font-size: 1.2rem;
+          margin-top: 2rem;
+        }
+      }
+      >div:nth-of-type(4) { 
+        height: 35%;
+        display: flex;
+        >div {
+          cursor: pointer;
+          border-radius: 0.9rem 0.9rem 0 0;
+          margin: 0px 5px;
+          background: #f8f3ee;
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+.ScollListInner{
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+}
