@@ -74,7 +74,9 @@ const Card = (props) => {
 
         style={MoreInfo} 
         onClick={(e) => OpenUp(e)}>
-            <animated.div style = {HoverDiv}>
+            <animated.div style = {HoverDiv}
+            onMouseOver={HoverOver}
+            onMouseLeave={HoverLeave}>
                 <div>
                     <div>
                         <p>Price</p>
@@ -86,8 +88,6 @@ const Card = (props) => {
                 </div>
             </animated.div>
             <animated.img 
-            onMouseOver={HoverOver}
-            onMouseLeave={HoverLeave}
             style={BikeDisplay}
             src ={"https://images.squarespace-cdn.com/content/v1/569392e49cadb61a0a1c471b/1571759630034-EOH79CGRSXQZ7AA52LF0/ke17ZwdGBToddI8pDm48kKMU66AV8w-h-7uh7q87lx8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc-olKiZsGcSormHkuzklFT_CxRWigoVeuU7qMOrzKwznInbsUHcovl8c4BApFEniv/quick+3.png?format=2500w"}/>
         </animated.div>

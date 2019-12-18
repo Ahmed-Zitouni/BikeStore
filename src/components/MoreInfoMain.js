@@ -4,7 +4,11 @@ import Wheel1 from '../Icons/Wheel1.png'
 import Saddle1 from '../Icons/Saddle1.png'
 import Handle1 from '../Icons/Handle1.png'
 
-const MoreInfoMain = () => {
+const MoreInfoMain = (props) => {
+    console.log(props)
+    const AddCart = () => {
+        props.stage[1](2)
+    }
     return (
         <div className="BikeDiv">
             <div>
@@ -18,13 +22,15 @@ const MoreInfoMain = () => {
               <img src = {Saddle1}/>
               <img src = {Handle1}/>
             </div>
-            <div>
-              <h1>$2850</h1>
-              <div>
-                <h1>+</h1>
-                <h1>Add to Cart</h1>
-              </div>
-            </div>
+            {props.stage[0] === 1 &&
+                <div>
+                <h1>$2850</h1>
+                <div onClick= {AddCart}>
+                    <h1>+</h1>
+                    <h1>Add to Cart</h1>
+                </div>
+                </div>
+            }
         </div>
     )
 }
