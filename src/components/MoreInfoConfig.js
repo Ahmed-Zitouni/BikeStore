@@ -5,11 +5,10 @@ import SaddleOn from '../Icons/SaddleOn.svg'
 import WheelOff from '../Icons/WheelOff.svg'
 import WheelOn from '../Icons/WheelOn.svg'
 import HandleOff from '../Icons/HandleOff.svg'
+import {Link} from 'react-router-dom'
+
 
 import { BikeContext } from '../context/BikeContext';
-
-
-
 const MoreInfoConfig = () => {
     const {Bikes, dispatch} = useContext(BikeContext)
     const [selectedPart, setSelectedPart] = useState("Wheel")
@@ -49,10 +48,12 @@ const MoreInfoConfig = () => {
         <div className="ConfigDiv">
             <div>
               <div>
-                <div>
-                  <FaLongArrowAltLeft />
-                  <p>Back</p>
-                </div>  
+                <Link to="/">
+                  <div>
+                    <FaLongArrowAltLeft />
+                    <p>Back</p>
+                  </div>  
+                </Link>
               </div>
               <div>
                 <div>

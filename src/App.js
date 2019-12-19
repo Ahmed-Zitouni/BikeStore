@@ -5,14 +5,18 @@ import NavBar from './components/NavBar'
 import { Route, Switch} from 'react-router-dom'
 
 import { BikeContext } from './context/BikeContext';
-import LandingPage from './components/LandingPage';
+import LandingText from './components/LandingText';
 import MoreInfo from './components/MoreInfo';
+import LandingBike from './components/LandingBike';
+import BikeTypes from './components/BikeTypes';
+import LandingPage from './components/LandingPage';
 
 function App() {
   const {Bikes, dispatch} = useContext(BikeContext)
   const props = useSpring({opacity: 1, from: {opacity: 0}})
   const [WhiteBack, setWhiteBack, stopWhiteBack]  = useSpring(() => ({}))
 
+  //const [category, setCategory] = useState(0)
 
   const PartSelect = () => {
 
@@ -21,10 +25,7 @@ function App() {
     <Switch>
 
     <Route path="/" exact>
-      <animated.div className = "App">
-          <NavBar />
-          <LandingPage />
-      </animated.div>
+      <LandingPage />
     </Route>  
 
     <Route path="/More-Info" exact>   
@@ -40,7 +41,7 @@ function App() {
     <Route path="/">
       <animated.div className = "App">
           <NavBar />
-          <LandingPage />
+          <LandingText />
       </animated.div>    
     </Route>    
      
