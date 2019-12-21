@@ -374,7 +374,7 @@ table {
           align-items: center;
           justify-content: center;
           user-select: none;
-          img {
+          >img {
             user-select: none;
             height: 80%;
             width: 80%;
@@ -398,10 +398,21 @@ table {
           border-radius: 0.9rem 0.9rem 0 0;
           margin: 0px 5px;
           background: #f8f3ee;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           flex: 1;
           >img {
-            height: 80%;
-            width: 80%;
+            width: 90%;
+          }
+          >p {
+            color: #333;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+          }
+          >div {
+            width: 40%;
+            margin-top: 1rem;
           }
         }
       }
@@ -559,7 +570,7 @@ table {
 .LandingMid {
   display: flex;
   flex-direction: row;
-  height: 80vh;
+  height: 74vh;
 }
 .Landing {
     text-align: center;
@@ -641,7 +652,7 @@ table {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 10vh;
+  height: 16vh;
   >div{
     width: 70%;
     display: flex;
@@ -653,18 +664,18 @@ table {
       user-select: none;
       flex-direction: column;
       width: 24%;
+      color: #cab7b7;
       h2 {
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: 700;
         width: 100%;
-        color: $Secondary;
         text-align: left;
       }
       >div {
         margin: 0.25rem 0px;
         height: 0.4rem;
         width: 100%;
-        background: $Secondary;
+        background: #cab7b7;
       }
     }
   }

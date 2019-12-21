@@ -1,4 +1,5 @@
 import React from 'react'
+import {IoMdCart} from 'react-icons/io'
 
 const NavBar = () => {
     return (
@@ -6,12 +7,10 @@ const NavBar = () => {
             <div>Bikeviles</div>
             <div>
                 <div><li>Bikes</li></div>
-                <div><li>deleivery</li></div>
-                <div><li>Contact</li></div>
-                <div><li>Cart</li></div>
-                <div><li>?</li></div>
+                <div><li>About Us</li></div>
+                <div><li><IoMdCart /></li></div>
             </div>
-        </div>
+        </div> 
     )
 }
 

@@ -4,6 +4,7 @@ const BikeContext = createContext();
 const BikeContextProvider = (props) => {
     const [Bikes, dispatch] = useState({
         BikeData: {
+            Type: 1,
             Wheel: 1,
             Handle: 1,
             Saddle: 1,

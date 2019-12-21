@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import NavBar from './NavBar'
 import {Link} from 'react-router-dom'
 import Landing from '../Icons/Landing.jpg'
+
+import { BikeContext } from '../context/BikeContext';
+
 const LandingPage = () => {
 
     return (
@@ -11,7 +14,8 @@ const LandingPage = () => {
                 dummy text of the printing and typesetting
                 industry Lorem Ipsum has</p>
             <Link to = '/More-Info'>
-            <div>
+            
+            <div onClick={() => console.log('Done')}>
                 <h2>Custimize</h2>
             </div>
             </Link>
