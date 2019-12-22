@@ -1,4 +1,5 @@
 import React, {useState, createContext} from 'react'
+import Bike1All from '../Icons/Bike2All.png'
 
 const BikeContext = createContext();
 const BikeContextProvider = (props) => {
@@ -12,14 +13,33 @@ const BikeContextProvider = (props) => {
         },
         Cart: [
             {
-                Type: 'Gear',
-                Id : '1',
-                Name: 'Bungie', 
-                Desc: 'Black26"',
-                Price: "3.00",
-                Img: 'https://images.giant-bicycles.com/b_white,c_pad,h_90,q_80,w_100/kpnorttuvvzipvaulzuh/71101-71104.jpg'
+                qty : 1,
+                Size: 'Medium/ Large',
+                Name: 'TCR Advanced 2 Disc Pro Compact', 
+                Color: 'Metallic Black',
+                Price: "4,600",
+                Img: Bike1All
+            },
+            {
+                qty : 1,
+                Size: 'Medium/ Large',
+                Name: 'TCR Advanced 2 Disc Pro Compact', 
+                Color: 'Metallic Black',
+                Price: "4,600",
+                Img: Bike1All
+            },
+            {
+                qty : 1,
+                Size: 'Medium/ Large',
+                Name: 'TCR Advanced 2 Disc Pro Compact', 
+                Color: 'Metallic Black',
+                Price: "4,600",
+                Img: Bike1All
             }
-        ]
+        ],
+        Display : {
+            CartOpen: false,
+        }
     })
     return (
         <BikeContext.Provider value={{Bikes, dispatch}}>

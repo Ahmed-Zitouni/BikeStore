@@ -23,12 +23,12 @@ const LandingBike = (props) => {
     const UpdateImage = (i) => {
         setImageNum(i)
         dispatch(prevState => {
-            return ({...prevState, BikeData : {
-                        ...BikeData,
-                        BikeId :  BikeSelected[Type][i] 
-                    }
-                })
+        return ({...prevState, BikeData : {
+                    ...BikeData,
+                    BikeId :  BikeSelected[Type][i] 
+                }
             })
+        })
         
     }
     useEffect(() => {

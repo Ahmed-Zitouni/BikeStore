@@ -51,6 +51,11 @@ ol, ul , li{
 blockquote, q {
 	quotes: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -98,7 +103,7 @@ table {
   align-items: center;
   margin: 0px 3rem;
   height: 8vh;
-  z-index: 5;
+  z-index: 6;
   position: relative;
   >div:nth-of-type(1) {
     display: flex;
@@ -119,14 +124,139 @@ table {
     >div {
       display: flex;
       align-items: center;
-      justify-content: center;
       width: 15%;
       height: 100%;
       cursor: pointer;
       >li {
         font-size: 0.9rem;
         color: black;
+        flex-direction: row;
+        display: flex;
+        position: relative;
+        >svg {
+          margin-right: 10px;
+          font-size: 1.5rem;
+        }
+        >div:nth-of-type(1) {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          background: $Secondary;
+          border-radius: 50%;
+          color: white;
+          align-items: center;
+          justify-content: center;
+        }
       }
+    }
+  }
+}
+.CartItems {
+  margin-top: 1.5rem;
+  height: 4rem;
+  font-size: 0.9rem;
+  >div:nth-of-type(1) {
+    flex: 1;
+    >img {
+      width: 50%;
+      height: 100%;
+      object-fit: contain;
+    }
+    >h2 {
+      width: 50%;
+      text-align: left;
+    }
+  }
+  >div:nth-of-type(4) {
+    margin-top: 0.5rem;
+    input {
+      width: 1.0rem;
+      height: 1.3rem;
+      font-size: 1rem;
+      text-align: center;
+      border: '2px solid rgba(0,0,0,0)'
+    }
+  }
+  >div:nth-of-type(5) {
+    >svg {
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+  }
+  >div {
+    display: flex;
+    justify-content: center;
+    width: 13%;
+    >h2 {
+      width: 70%;
+      text-align: center;
+      margin-top: 0.5rem;
+      line-height: 1.2;
+    }
+  }
+}
+.CartPopUp {
+  width: 700px;
+  margin-top: 0.5rem;
+  background-color: white;
+  padding: 0 20px 20px;
+  border: 1px solid #aaa;
+  border-radius: 0 0 4px;
+  border-top: none;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  position: absolute;
+  right: 0;
+  top: 40px;
+  display: flex; 
+  flex-direction: column;
+  cursor: default;
+  position: absolute;
+  >div:nth-of-type(1) {
+    align-self: flex-end;
+    margin-top: 1rem;
+    >svg {
+      width: 1.4rem;
+      height: 1.4rem;
+      cursor: pointer;
+    }
+  }
+  >div:nth-of-type(2) {
+    margin-top: 1rem;
+    display: inline-block;
+    >div:nth-of-type(1) {
+      height: 1rem;
+      border-bottom: 1px solid grey;
+    }
+    >div {
+      display: flex;
+      >h1:nth-of-type(1) {
+        flex: 1;
+        text-align: left;
+      }
+      >h1 {
+        width: 13%;
+        float: right;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+    }
+  }
+  >div:nth-of-type(3) {
+    padding-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    >div {
+      display: flex;
+      align-self: flex-end;
+      align-items: center;
+      justify-content: center;
+      width: 12rem;
+      height: 2.5rem;
+      background: $Secondary;
+      font-size: 0.82rem;
+      color: white;
+      font-weight: 700;
     }
   }
 }
