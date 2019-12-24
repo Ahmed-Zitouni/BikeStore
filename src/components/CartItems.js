@@ -1,5 +1,4 @@
-import React, {useState, useContext} from 'react'
-import Bike1All from '../Icons/Bike2All.png'
+import React, {useState, useContext, useEffect} from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import { BikeContext } from '../context/BikeContext';
 
@@ -9,20 +8,19 @@ const CartItems = (props) => {
     const BadInput = {border: '2px solid red'}
     const IsCartOpen = Bikes.Display.CartOpen
     const Cart = Bikes.Cart
-
-    const Items = Bikes.Cart
     const number = props.num
     let StateQyt = Bikes.Cart[number].qty
-
-
     const Data = props.data
+
+    const [Price, setPrice] = useState(Data.Price)
+
     const ChangeAmount = (e) => {
         let info = e.target.value
-        var patt1 = /[1-9]/g;
+        var NumberCheck = /[1-9]/g;
         InputErr ? setInputErr(false) : setInputErr(false) 
         let NewCart = Cart
 
-        if (info.match(patt1) || info == "" ) {
+        if (info.match(NumberCheck) || info == "" ) {
             NewCart[number].qty = info
             dispatch(prevState => {
                 return ({...prevState, Cart : [
@@ -42,17 +40,22 @@ const CartItems = (props) => {
         }
     }
     const RemoveItem = (e) => {
-        //Bikes.Cart[name].qty = info
-        let DelItem = e.target.name
-        //let NewCart = Items.filter(item => item.id !== DelItem)
-        
         dispatch(prevState => {
         return ({...prevState, Cart : [
-                ...Items.filter((value, index) => number !== index)
+                ...Cart.filter((value, index) => number !== index)
             ]
             })
         })
     }
+    useEffect(() => {
+        setPrice(GetPrice())
+    }, [Cart])
+
+    const GetPrice = () => {
+        console.log(!typeof StateQyt == 'number', Data.Price)
+        if (!typeof StateQyt == 'number' || StateQyt == "") return Data.Price
+        return Data.Price * parseInt(Data.qty, 10)
+    } 
     return (
         <div className= "CartItems">
             <div>
@@ -77,7 +80,7 @@ const CartItems = (props) => {
                 />
             </div>
             <div>
-                <h2>${Data.Price}</h2>
+                <h2>${Price}</h2>
                 <FaTrashAlt onClick={(e) => RemoveItem(e)}/>
             </div>                         
         </div>

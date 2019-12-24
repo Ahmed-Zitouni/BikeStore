@@ -10,11 +10,13 @@ import MoreInfo from './components/MoreInfo';
 import LandingBike from './components/LandingBike';
 import BikeTypes from './components/BikeTypes';
 import LandingPage from './components/LandingPage';
+import CheckOutPage from './components/CheckOutPage'
 
 function App() {
   const {Bikes, dispatch} = useContext(BikeContext)
   const props = useSpring({opacity: 1, from: {opacity: 0}})
   const [WhiteBack, setWhiteBack, stopWhiteBack]  = useSpring(() => ({}))
+  const Display = Bikes.Display
 
   //const [category, setCategory] = useState(0)
 
@@ -25,16 +27,23 @@ function App() {
     <Switch>
 
     <Route path="/" exact>
-      <LandingPage />
+      <LandingPage colors= {1}/>
     </Route>  
 
-    <Route path="/More-Info" exact>   
+    <Route path="/More-Info" exact>  
       <animated.div className = "LandingWrap">
-        <NavBar />
+        <NavBar colors= {2}/>
         <animated.div className = "MoreInfo" style={props}>
           <div></div>
           <MoreInfo />
         </animated.div>
+      </animated.div>
+    </Route>
+
+    <Route path="/Cart" exact> 
+      <animated.div className = "ChecKOutWrap"> 
+        <NavBar colors= {1}/>
+        <CheckOutPage />
       </animated.div>
     </Route>
 

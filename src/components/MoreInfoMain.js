@@ -22,7 +22,7 @@ const MoreInfoMain = (props) => {
     const {Bikes, dispatch} = useContext(BikeContext)
 
     const BikeSelected = Bikes.BikeData.BikeId
-    console.log('The Bike',BikeSelected)
+    const BikeInfo = Bikes.BikeData.BikeInfo
     const WheelSelected = Bikes.BikeData.Wheel
     const SaddleSelected = Bikes.BikeData.Saddle
     const HandleSelected = Bikes.BikeData.Handle
@@ -56,7 +56,7 @@ const MoreInfoMain = (props) => {
     return (
         <div className="BikeDiv">
             <div>
-              <h1>IF Mode</h1>
+              <h1>{BikeInfo.Name}</h1>
               <p>Overview</p>
               <p>Specs</p>
             </div>

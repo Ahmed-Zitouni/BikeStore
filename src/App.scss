@@ -101,7 +101,7 @@ table {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0px 3rem;
+  margin: 0px 5rem;
   height: 8vh;
   z-index: 6;
   position: relative;
@@ -129,7 +129,6 @@ table {
       cursor: pointer;
       >li {
         font-size: 0.9rem;
-        color: black;
         flex-direction: row;
         display: flex;
         position: relative;
@@ -211,6 +210,7 @@ table {
   flex-direction: column;
   cursor: default;
   position: absolute;
+  color: #333;
   >div:nth-of-type(1) {
     align-self: flex-end;
     margin-top: 1rem;
@@ -227,18 +227,26 @@ table {
       height: 1rem;
       border-bottom: 1px solid grey;
     }
-    >div {
+    >div:nth-of-type(1) {
       display: flex;
-      >h1:nth-of-type(1) {
-        flex: 1;
-        text-align: left;
-      }
+      flex-direction: row;
       >h1 {
         width: 13%;
         float: right;
         font-size: 0.9rem;
         font-weight: 700;
       }
+      >h1:nth-of-type(1) {
+        flex: 1;
+        text-align: left;
+      }
+    }
+    >div{
+      display: flex;
+      flex-direction: column;
+    }
+    >div>div {
+      display: flex;
     }
   }
   >div:nth-of-type(3) {
@@ -246,7 +254,21 @@ table {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    >div {
+    flex-direction: column;
+
+    >div:nth-of-type(1) {
+      display: flex;
+      align-self: flex-end;
+      align-items: center;
+      justify-content: flex-end;
+      width: 12rem;
+      height: 2.5rem;
+      font-size: 0.92rem;
+      color: #333;
+      font-weight: 700;
+      margin-right: 1.5rem;
+    }
+    >div:nth-of-type(2) {
       display: flex;
       align-self: flex-end;
       align-items: center;
@@ -372,12 +394,14 @@ table {
     width: 50%;
     h1 {
       font-weight: 800;
-      font-size: 1.2rem;
-      padding-right: 25%;
-      flex: 1;
+      font-size: 1rem;
+      padding-right: 15%;
+      flex: 1 1;
       text-align: left;
+      line-height: 1.4;
     }
     p {
+      cursor: pointer;
       margin-right: 1.3rem;
       font-size: 0.7rem;
     }
@@ -385,7 +409,7 @@ table {
   > div:nth-of-type(2) {
     margin-top: 2rem;
     height: 22rem;
-    width: 100%;
+    width: 90%;
     padding-left: 1rem;
     position: relative;
     user-select: none;
@@ -523,6 +547,7 @@ table {
       >div:nth-of-type(4) { 
         height: 35%;
         display: flex;
+        user-select: none;
         >div {
           cursor: pointer;
           border-radius: 0.9rem 0.9rem 0 0;
@@ -613,7 +638,7 @@ table {
           justify-content: center;
           user-select: none;
         }
-        >div:nth-of-type(2) {
+        >a{
           color: white;
           cursor: pointer;
           border: 2px solid $Secondary;
@@ -653,7 +678,7 @@ table {
           >img {
             height: 30%;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             align-self: center;
           }
           >p {
@@ -663,6 +688,7 @@ table {
             text-align: left;
             margin-top: 1rem;
             line-height: 1.3;
+            height: 25%;
             width: 100%;
           }
           >div {
@@ -808,6 +834,301 @@ table {
         background: #cab7b7;
       }
     }
+  }
+}
+.ChecKOutWrap {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: relative;
+}
+.CheckOutPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  >h1{
+    font-size: 2rem;
+    width: 85%;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+    text-align: left;
+  }
+  >div {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+.MainSection {
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 8px;
+}
+.PaymentInfo {
+  width: 58.3333333333%;
+  margin-bottom: 5rem;
+  >div{
+
+  >div:nth-of-type(1) {
+    user-select: none;
+    border-radius: 4px;
+    border-color: #ddd;
+    color: #333;
+    background-color: #f5f5f5;
+    display: flex;
+    border-color: #ddd;
+    flex-direction: row;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    >h1:nth-of-type(1) {
+      color: white;
+      height: 21px;
+      width: 20px;
+      background: #ff5e57;
+      font-size: 16px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+    >h1:nth-of-type(2) {
+      text-transform: uppercase;
+      color: #999;
+      height: 20px;
+      line-height: 20px;
+      margin-top: 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+}
+.Payment-Sect3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 5px;
+  color: #333;
+  >div:nth-of-type(1) {
+    >h1 {
+      font-weight: 700;
+      font-size: 18px;
+      flex: 1;
+      text-align: left;
+    }
+    >img {
+      justify-content: flex-end;
+      object-fit: contain;
+      
+    }
+  }
+  >div:nth-of-type(2) {
+    >input {
+      width: 25%;
+    }
+  }
+  >div:nth-of-type(3) {
+    >input {
+      width: 15%;
+    }
+  }
+  >div:nth-of-type(4) {
+    >input {
+      width: 15%;
+    }
+  }
+  >div{
+    padding: 8px 0px;
+    display: flex;
+    width: 100%;
+    >input {
+      font-size: 14px;
+      height: 20px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      margin: 0;
+    }
+    >h1 {
+      align-self: center;
+      font-size: 14px;
+      width: 40%;
+      text-align: left;
+    }
+  }
+}
+.Payment-Sect2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 5px;
+  color: #333;
+  >div:nth-of-type(1) {
+    >h1 {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 14px;
+    }
+  }
+  >div{
+    padding: 8px 0px;
+    display: flex;
+    width: 100%;
+    >input {
+      font-size: 14px;
+      height: 20px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      margin: 0;
+    }
+    >input:nth-of-type(1) {
+      margin-right: 10px;
+    }
+    >h1 {
+      font-weight: 700;
+      align-self: center;
+      font-size: 15px;
+    }
+  }
+}
+.Payment-Sect1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  >div{
+    padding: 8px 0px;
+    display: flex;
+    width: 100%;
+    >input {
+      font-size: 14px;
+      height: 20px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+    }
+    >input:nth-of-type(1) {
+      margin-right: 3%;
+    }
+  }
+}
+.Payment-Sect1 {
+  >div:nth-of-type(1) {
+    >input {
+      width: 48.5%;
+    }
+  }
+  >div:nth-of-type(2) {
+    >input {
+      width: 48.5%;
+    }
+  }
+  >div:nth-of-type(3) {
+    >input {
+      width: 30%;
+    }
+    >input:nth-of-type(2) {
+      width: 67%;
+    }
+  }
+  >div:nth-of-type(4) {
+    >input {
+      width: 100%;
+      margin-right: 0px;
+    }
+  }
+  >div:nth-of-type(5) {
+    >input {
+      width: 30%;
+    }
+    >input:nth-of-type(2) {
+      width: 67%;
+    }
+  }
+}
+.PriceDetails {
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  color: #888;
+  margin-top: 2rem;
+  font-size: 15px;
+  >div:nth-of-type(1) {
+    color: $Secondary;
+    font-weight: 600;
+  }
+  >div:nth-of-type(3) {
+    border-bottom: 2px solid grey;
+  }
+  >div:nth-of-type(4) {
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  >div {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 0;
+    >h2:nth-of-type(1) {
+      flex: 1 1;
+      display: flex;
+    }
+  }
+}
+.CartItemF {
+  color: #888;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  height: 4.5rem;
+  padding-bottom: 1rem;
+  >img {
+    width: 22%;
+    object-fit: contain;
+    margin-top: 0.5rem;
+  }
+  >div {
+    flex: 1;
+    margin-top: 0.5rem;
+    >h1 {
+      font-size: 15px;
+      font-weight: 700;
+      text-align: left;
+      line-height: 1.2;
+    }
+    >p {
+      font-size: 15px;
+      text-align: left;
+      margin-top: 0.5rem;
+    }
+  }
+  >h2 {
+    margin-top: 0.5rem;
+    width: 10%;
+  }
+  >svg {
+    margin-top: 0.4rem;
+
+  }
+}
+.OrderInfo {
+  padding-left: 30px;
+  width: 41.6666666667%;
+  display: flex;
+  flex-direction: column;
+  >h1 {
+    text-align: left;
+    margin: 0 0 2px;
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1px solid #ddd;
   }
 }
 /*
