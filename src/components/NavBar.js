@@ -2,6 +2,8 @@ import React, {useContext} from 'react'
 import {IoMdCart } from 'react-icons/io'
 import { BikeContext } from '../context/BikeContext';
 import CartPopUp from './CartPopUp';
+import {Link} from 'react-router-dom'
+
 
 const NavBar = (props) => {
     const {Bikes, dispatch} = useContext(BikeContext)
@@ -32,7 +34,11 @@ const NavBar = (props) => {
         <div className = "Navbar">
             <div style = {Colors == 1 ? Dark : NormalColor}>Bikeviles</div>
             <div style = {Colors == 1 ? NormalColor : Dark}>
-                <div><li>Bikes</li></div>
+                <div>
+                    <Link to="/">
+                        <li>Bikes</li>
+                    </Link>
+                </div>
                 <div>
                     <li>About Us</li>
                 </div>

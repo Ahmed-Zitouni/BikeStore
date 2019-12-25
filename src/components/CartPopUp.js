@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect} from 'react'
 import {FaWindowClose, FaTrashAlt } from 'react-icons/fa'
 import { BikeContext } from '../context/BikeContext';
 import CartItems from './CartItems';
+import {Link} from 'react-router-dom'
 
 
 const CartPopUp = () => {
@@ -68,7 +69,7 @@ const CartPopUp = () => {
             </div>
             <div>
                 <div><h1>Total: ${Total}</h1></div>
-                <div><p>Proceed to checkout </p></div>    
+                <Link onclick={() => CloseCart()} to ="/Cart"><p>Proceed to checkout </p></Link>    
             </div>
         </div>
     )

@@ -50,8 +50,8 @@ const LandingBike = (props) => {
                 index={imageNum}
                 onRequestChange={i => UpdateImage(i)}
             >
-                <GalleryImage objectFit="cover" key={'1'} src={Bike2All} />
-                <GalleryImage objectFit="cover" key={'2'} src={Bike1All} />
+                <GalleryImage objectFit="contain" key={'1'} src={Bike2All} />
+                <GalleryImage objectFit="contain" key={'2'} src={Bike1All} />
             </Gallery>
         }
         {Type === 2 &&
@@ -59,8 +59,8 @@ const LandingBike = (props) => {
                 index={imageNum}
                 onRequestChange={i => UpdateImage(i)}
             >
-                <GalleryImage objectFit="cover" key={'1'} src={Bike3All} />
-                <GalleryImage objectFit="cover" key={'2'} src={Bike4All} />
+                <GalleryImage objectFit="contain" key={'1'} src={Bike3All} />
+                <GalleryImage objectFit="contain" key={'2'} src={Bike4All} />
             </Gallery>
         }
         {Type === 3 &&
@@ -68,8 +68,8 @@ const LandingBike = (props) => {
                 index={imageNum}
                 onRequestChange={i => UpdateImage(i)}
             >
-                <GalleryImage objectFit="cover" key={'1'} src={Bike1All} />
-                <GalleryImage objectFit="cover" key={'2'} src={Bike2All} />
+                <GalleryImage objectFit="contain" key={'1'} src={Bike1All} />
+                <GalleryImage objectFit="contain" key={'2'} src={Bike2All} />
             </Gallery>
         }
         </div>

@@ -79,7 +79,9 @@ const AddToCart = (props) => {
                   <h1>Added To Cart</h1>
                 </div>
                 <div className= "CartAdded-buttons">
-                  <div onClick={() => GoBack()}>Countinue Shopping</div>
+                  <Link to="/">
+                    <div>Countinue Shopping</div>
+                  </Link>
                   <Link to="/Cart">
                   Checkout <FaLongArrowAltRight />
                   </Link>

@@ -50,7 +50,20 @@ const MoreInfoMain = (props) => {
         3: Handle3,
         4: Handle4
     }
+    const BikeCart = {
+        qty : 1,
+        Size: 'One Size',
+        Name: 'Blackburn Piston Floor Pump', 
+        Color: 'Red',
+        Price: 500,
+        Img: BikeIds[BikeSelected]
+    }
     const AddCart = () => {
+        let NewCart = Bikes.Cart
+        NewCart.push(BikeCart)
+        dispatch(prevState => {
+        return ({...prevState, Cart : [...NewCart] })
+        })
         props.stage[1](2)
     }
     return (
