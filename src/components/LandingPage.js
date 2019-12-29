@@ -15,9 +15,8 @@ const LandingPage = (props) => {
             <NavBar Colors = {"1"} />
             <div className="LandingMid">
                 <LandingText />
-                <LandingBike UseC = {category}/>
+                <LandingBike/>
             </div>
-            <BikeTypes UseC = {category} SetC = {setCategory}/>
         </animated.div>
         </>
     )

@@ -15,9 +15,7 @@ const LandingBike = (props) => {
     const BikeData = Bikes.BikeData
 
     const BikeSelected =  {
-        1 : [2,1],
-        2 : [3,4],
-        3 : [1,2]
+        1 : [1, 2, 3, 4],
         }   
 
     const UpdateImage = (i) => {
@@ -50,8 +48,10 @@ const LandingBike = (props) => {
                 index={imageNum}
                 onRequestChange={i => UpdateImage(i)}
             >
-                <GalleryImage objectFit="contain" key={'1'} src={Bike2All} />
-                <GalleryImage objectFit="contain" key={'2'} src={Bike1All} />
+                <GalleryImage objectFit="contain" key={'1'} src={Bike1All} />
+                <GalleryImage objectFit="contain" key={'2'} src={Bike2All} />
+                <GalleryImage objectFit="contain" key={'1'} src={Bike3All} />
+                <GalleryImage objectFit="contain" key={'2'} src={Bike4All} />
             </Gallery>
         }
         {Type === 2 &&

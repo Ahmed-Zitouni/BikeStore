@@ -53,9 +53,9 @@ const MoreInfoMain = (props) => {
     const BikeCart = {
         qty : 1,
         Size: 'One Size',
-        Name: 'Blackburn Piston Floor Pump', 
-        Color: 'Red',
-        Price: 500,
+        Name: 'TCR Advanced 2 Disc Pro Compact', 
+        Color: 'Metalic',
+        Price: 1400,
         Img: BikeIds[BikeSelected]
     }
     const AddCart = () => {
@@ -70,8 +70,6 @@ const MoreInfoMain = (props) => {
         <div className="BikeDiv">
             <div>
               <h1>{BikeInfo.Name}</h1>
-              <p>Overview</p>
-              <p>Specs</p>
             </div>
             <div>
               <img src = {BikeIds[BikeSelected]}/>

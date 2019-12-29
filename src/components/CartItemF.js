@@ -28,7 +28,7 @@ const CartItemF = (props) => {
                 <p>{info.Size}</p> 
             </div>
             <h2>{info.qty}</h2>
-            <h2>{Price}</h2>
+            <h2>${Price}</h2>
             <FaTrashAlt onClick={() => RemoverFunc(number)}/>
         </div>
     )

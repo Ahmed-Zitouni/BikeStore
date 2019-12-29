@@ -15,7 +15,7 @@ const BikeContextProvider = (props) => {
                 Size: 'Medium/ Large',
                 Name: 'TCR Advanced 2 Disc Pro Compact', 
                 Color: 'Metallic Black',
-                Price: 4600,
+                Price: 1400,
                 Img: Bike1All
             }
         },
@@ -25,7 +25,7 @@ const BikeContextProvider = (props) => {
                 Size: 'Medium/ Large',
                 Name: 'TCR Advanced 2 Disc Pro Compact', 
                 Color: 'Metallic Black',
-                Price: 4600,
+                Price: 1400,
                 Img: Bike1All
             },
             {
@@ -33,7 +33,7 @@ const BikeContextProvider = (props) => {
                 Size: 'Medium/ Large',
                 Name: 'TCR Advanced 2 Disc Pro Compact', 
                 Color: 'Metallic Black',
-                Price: 4600,
+                Price: 1400,
                 Img: Bike1All
             },
             {
@@ -41,7 +41,7 @@ const BikeContextProvider = (props) => {
                 Size: 'Medium/ Large',
                 Name: 'TCR Advanced 2 Disc Pro Compact', 
                 Color: 'Metallic Black',
-                Price: 4600,
+                Price: 1400,
                 Img: Bike1All
             }
         ],

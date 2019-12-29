@@ -34,10 +34,7 @@ const MoreInfoConfig = () => {
     const PartSelectedImg = {
       filter: 'invert(100%) sepia(4%) saturate(14%) hue-rotate(129deg) brightness(103%) contrast(100%)'
     }
-    const PartNotSelected = {}
     const BikeData = Bikes.BikeData
-
-    console.log(Bikes.BikeData[selectedPart])
     const PartSelect = (type) => {
         setSelectedPart(type)
     }
