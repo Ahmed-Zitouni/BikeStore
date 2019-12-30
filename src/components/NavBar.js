@@ -10,8 +10,7 @@ const NavBar = (props) => {
     const Items = Bikes.Cart
     const Display = Bikes.Display
     let IsCartOpen = Bikes.Display.CartOpen
-    const Colors = props.Colors
-    
+    const Colors = props.colors
     const NormalColor = {
         color: 'white'
     }

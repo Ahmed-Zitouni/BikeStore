@@ -1,5 +1,5 @@
 import React, {useState, createContext} from 'react'
-import Bike1All from '../Icons/Bike2All.png'
+import Bike1All from '../Icons/Bike1All.png'
 
 const BikeContext = createContext();
 const BikeContextProvider = (props) => {

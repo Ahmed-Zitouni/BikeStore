@@ -35,7 +35,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 #root {
-  height: 100%;
+
 }
 html, body {
   height: 100%;
@@ -73,18 +73,22 @@ table {
 .LandingWrap {
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: white;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  display: grid;
-  grid-gap: 0px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 10vh auto;
-  grid-template-areas: 
-    "n n"
-    "m m";
+  flex-direction: column;
+  display: flex;
+  >div:nth-child(1) {
+    z-index: 3;
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    background: $Main;
+    top: 0;
+    left: 0;
+  }
 }
 .App {
   text-align: center;
@@ -101,7 +105,6 @@ table {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0px 5rem;
   height: 10vh;
   z-index: 6;
   position: relative;
@@ -361,12 +364,12 @@ table {
 }
 .MoreInfo {
   z-index: 3;
-  width: 100%;
+  width: 90%;
   height: 100%;
-  background: white;
   display: flex;
   flex-direction: row;
-  grid-area: m;
+  align-self: center;
+  /*
   >div:nth-child(1) {
     z-index: 1;
     position: absolute;
@@ -375,20 +378,21 @@ table {
     background: $Main;
     top: 0;
   }
+  */
 }
 
 .BikeDiv {
-  width: 54%;
+  width: 61%;
   z-index: 1;
   height: 100%;
+  color: white;
   >div {
-    margin-left: 10%;
     display: flex;
     margin-top: 1rem;
     justify-content: flex-start;
-    color: white;
+    flex-direction: column;
   }
-  > div:nth-of-type(1) {
+  .BikeN {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -409,11 +413,10 @@ table {
       font-size: 0.7rem;
     }
   }
-  > div:nth-of-type(2) {
+  .BikeI {
     margin-top: 2rem;
     height: 22rem;
-    width: 90%;
-    padding-left: 1rem;
+    width: 95%;
     position: relative;
     user-select: none;
     >img:nth-child(1) {
@@ -426,9 +429,11 @@ table {
       height: 100%;
       object-fit: contain;
       position: absolute;
+      top: 0;
+      left: 0
     }
   }
-  > div:nth-of-type(3) {
+  .BikeP {
     height: 5rem;
     width: 100%;
     display: flex;
@@ -453,6 +458,7 @@ table {
       align-content: center;
       justify-content: center;
       h1:nth-of-type(1) {
+        color: white;
         justify-self: center;
         align-self: center;
         font-size: 2.5rem;
@@ -461,6 +467,7 @@ table {
         margin-bottom: 3px;
       }
       h1:nth-of-type(2) {
+        color: white;
         justify-self: center;
         align-self: center;   
         font-weight: 700;
@@ -470,13 +477,12 @@ table {
   }
 }
 .ConfigDiv {
-  width: 46%;
+  width: 39%;
   height: 100%;
   >div:nth-of-type(1) {
-    margin-left: 6rem;
     margin-top: 2rem;
-    height: 90%;
-    width: 70%;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -487,7 +493,7 @@ table {
         display: flex;
         height: 100%;
         padding-left: 5%;
-        width: 18%;
+        width: 5rem;
         border-radius: 0.3rem;
         border: 2px solid #f4f2f4;
         cursor: pointer;
@@ -518,7 +524,6 @@ table {
         }
       }
       >div:nth-of-type(2) { 
-        height: 25%;
         display: flex;
         >div {
           cursor: pointer;
@@ -526,11 +531,12 @@ table {
           margin: 10px 10px;
           border-radius: 0.4rem;
           background: white;
-          flex: 1;
           display: flex;
           align-items: center;
           justify-content: center;
           user-select: none;
+          width: 5rem;
+          height: 5rem;
           >img {
             user-select: none;
             height: 80%;
@@ -627,7 +633,15 @@ table {
         display: flex;
         font-size: 0.75rem;
         font-weight: 700;
-        width: 80%;
+        width: 90%;
+        > a {
+          div {
+            display: flex;
+            align-items: center;
+            padding: 0px 5px;
+            justify-content: center;
+          }
+        }
         >a:nth-of-type(1) {
           cursor: pointer;
           border: 2px solid #f4f2f4;
@@ -646,7 +660,6 @@ table {
           cursor: pointer;
           border: 2px solid $Secondary;
           margin: 10px 10px;
-          margin-right: 40px;
           border-radius: 0.4rem;
           background: $Secondary;
           width: 40%;
@@ -674,10 +687,15 @@ table {
         height: 15rem;
         display: flex;
         margin-top: 1rem;
+        >div:nth-of-type(2) {
+          margin: 0px 8%;
+        }
         >div {
           border-radius: 0.9rem 0.9rem 0 0;
-          margin: 0px 7%;
-          width: 20%;
+          width: 28%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           >img {
             height: 30%;
             width: 100%;
@@ -688,7 +706,7 @@ table {
             justify-self: flex-start;
             font-size: 0.78rem;
             display: flex;
-            text-align: left;
+            text-align: center;
             margin-top: 1rem;
             line-height: 1.3;
             height: 25%;
@@ -712,7 +730,7 @@ table {
               display: flex;
               align-items: center;
               justify-content: center;
-              margin-left: 1.2rem;
+              margin-left: 10%;
               border-radius: 15%;
               user-select: none;
               p {
@@ -730,6 +748,8 @@ table {
   display: flex;
   flex-direction: row;
   height: 72vh;
+  width: 90%;
+  align-self: center;
 }
 .Landing {
     text-align: center;
@@ -756,7 +776,7 @@ table {
 .LandingBike {
   grid-area: b;
   z-index: 5;
-  width: 100%;
+  width: 60%;
   padding-top: 4rem;
   display: flex;
   flex-direction: row;
@@ -767,47 +787,50 @@ table {
 }
 .Landing-Text {
   padding-top: 5rem;
-  margin-left:6rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  >h1 {
-    width: 100%;
-    text-align: left;
-    font-size: 3rem;
-    font-weight: 700;
-  }
-  >p {
-    align-self: flex-start;
-    margin-top: 2.5rem;
-    width: 85%;
-    font-size: 1rem;
-    color: grey;
-    text-align: left;
-    line-height: 1.8;
-  }
-  >a {
-    margin-top: 2rem;
-    margin-left: 2rem;
-  }
-  > a div {
-    cursor: pointer;
-    user-select: none;
-    height: 3.5rem;
-    width: 11rem;
-    background: $Secondary;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.3rem;
-    h2 {
-      justify-self: center;
-      color: white;
+  width: 40%;
+  div {
+    >h1 {
+      width: 100%;
+      text-align: left;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    >p {
+      align-self: flex-start;
+      margin-top: 2.5rem;
+      width: 85%;
       font-size: 1rem;
-      font-weight: 600;
-      text-align: center;
+      color: grey;
+      text-align: left;
+      line-height: 1.8;
     }
   }
+    >a {
+      margin-top: 2rem;
+      margin-left: 2rem;
+      z-index: 3;
+    }
+    > a div {
+      cursor: pointer;
+      user-select: none;
+      height: 3.5rem;
+      width: 11rem;
+      background: $Secondary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.3rem;
+      h2 {
+        justify-self: center;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
 }
 .BikeTypes {
   margin-top: 2vh;
@@ -853,6 +876,15 @@ table {
   align-items: center;
   justify-content: center;
   position: relative;
+  >div:nth-of-type(1) {
+    z-index: 3;
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: $Main;
+    top: 0;
+    right: 0;
+  }
 }
 .CheckOutPage {
   display: flex;
@@ -902,7 +934,7 @@ table {
       height: 21px;
       width: 20px;
       background: #ff5e57;
-      font-size: 16px;
+      font-size: 14px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -1069,11 +1101,11 @@ table {
   }
 }
 .PriceDetails {
-  height: 15rem;
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 15px;
+  font-weight: 700;
   >div:nth-of-type(1) {
     color: $Secondary;
     font-weight: 600;
@@ -1083,7 +1115,7 @@ table {
   }
   >div:nth-of-type(4) {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 18px;
   }
   >div {
     display: flex;
@@ -1096,53 +1128,55 @@ table {
   }
 }
 .CartItemF {
-  color: #888;
-  margin-top: 0.5rem;
+  color: #333;
+  margin-top: 0.8rem;
   display: flex;
   flex-direction: row;
-  height: 6rem;
+  height: 5.2rem;
   background: white;
-  border-radius: 3px;
+  border-radius: 7px;
   >img {
     width: 27%;
     object-fit: contain;
     margin: 0px 0.5rem;
     align-self: center;
+    height: 77%;
   }
   >div {
     flex: 1;
-    margin-top: 0.5rem;
+    margin-top: 0.9rem;
     >h1 {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       text-align: left;
       line-height: 1.2;
     }
     >p {
-      font-size: 15px;
+      font-size: 12px;
       text-align: left;
+      color: grey;
       margin-top: 0.5rem;
     }
   }
   >h2:nth-of-type(1) {
-    margin-top: 0.5rem;
+    margin-top: 0.9rem;
     width: 10%;
   }
   >h2:nth-of-type(2) {
-    margin-top: 0.5rem;
+    margin-top: 0.9rem;
     width: 12%;
     text-align: right;
     margin-right: 5px;
   }
   >svg {
     cursor: pointer;
-    margin: 0px 1%;
-    margin-top: 0.4rem;
+    margin: 0px 2%;
+    margin-top: 0.8rem;
   }
 }
 .OrderInfo {
-  margin-left: 12.1%;
-  width: 29.666667%;
+  padding-left: 5.1%;
+  width: 37.666667%;
   display: flex;
   flex-direction: column;
   z-index: 3;
@@ -1152,105 +1186,9 @@ table {
     margin: 0 0 2px;
     text-transform: uppercase;
     border-bottom: 1px solid #ddd;
-  }
-}
-/*
-.Header {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-
-  background-image: url('https://s7d5.scene7.com/is/image/Specialized/gift-guide_PLP_CategoryHero_1440x450?$hybris-category-hero$');
-  >div {
-    position: absolute;
-    top:30%;
-    right: 10rem;
-    color: white;
-    width: 30%;
     font-weight: 700;
-    font-size: 4rem;
-  } 
-}
-.BikeGrid {
-  display: grid;
-  background: white;
-  grid-gap: 0px;
-  padding: 0px 10%;
-  padding-top: 4rem;
-  grid-template-columns: 12rem auto;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "s d";
-}
-.SortBar {
-  grid-area: s;
-  >div {
-    height: 100%;
-    .Category:nth-of-type(1){ 
-      margin-top: 0px;
-    }
-    .Category{
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      width: 100%;
-      flex-direction: column;
-      margin-top: 1rem;
-    
-      h1 {
-        border-bottom: 2px solid #f4f2f4;
-        width: 100%;
-        text-align: left;
-        font-size: 1.4rem;
-        font-weight: 700;
-        line-height: 1.2;
-      }
-      input {
-        height: 1.2rem;
-        width: 1.2rem;
-      }
-      >div:nth-of-type(1){
-        margin-top: 1rem;
-      }
-      >div{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2rem;
-      }
-    }
   }
 }
-
-.MainGrid {
-  grid-area: d;
-  display: grid;
-  grid-gap: 40px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 290px;
-  margin-right: 4rem;
-   div {
-    background: white;
-    >img {
-      transition: transform .2s ease-in-out 0s;
-      width: 100%;
-      height: auto;
-      border: 0;
-      vertical-align: middle;
-    }
-    >h1 {
-      font-size: 1.1rem;
-      margin-top: 0.8rem;
-      font-weight: 600;
-    }
-    >p {
-      margin-top: 0.7rem;
-      font-size: 1.1rem;
-      color: grey;
-    }
-  }
-}
-*/
 .ScollListInner{
   width: 100%;
   height: 100%;
@@ -1259,4 +1197,328 @@ table {
   transform: scale(0.98);
   will-change: transform;
   user-select: none;
+}
+@media only screen and (max-width: 1200px) {
+  .Landing-Text {
+  }
+  .Landing-Text > a {
+
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Landing-Text {
+    >a {
+      margin-left: 0px;
+    }
+    >div{
+      >h1 {
+        font-size: 2.3rem;
+      }
+      >p {
+        width: 100%;
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+        line-height: 1.5;
+      }
+    }
+  }
+  .LandingBike {
+    margin-left: 5%;
+  }
+}
+@media only screen and (max-width: 1090px) {
+
+  .CartItemF {
+    align-items: center;
+    font-size: 13px;
+    >img {
+      width: 20%;
+    }
+    >h2:nth-of-type(1) {
+      margin-top: 0px;
+    }
+    >h2:nth-of-type(2) {
+      margin-top: 0px;
+    }
+    >svg {
+      margin-top: 0px;
+    }
+    >div {
+      margin-top: 0px;
+      >h1 {
+        font-size: 13px;
+      }
+      >p {
+        font-size: 11px;
+      }
+    }
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) {
+    font-size: 1.7rem;
+  }
+  .BikeDiv > div:nth-of-type(3) {
+    >h1 {
+      font-size: 1.4rem;
+    }
+    >div h1:nth-of-type(2) {
+      font-size: 0.9rem;
+    }
+  }
+  .BikeDiv .BikeN > h1 {
+    font-size: 0.95rem;
+  }
+  .BikeDiv .BikeP { 
+    > div {
+      height: 70%;
+      h1:nth-of-type(1) {
+        font-size: 2rem;
+      }
+      h1:nth-of-type(2) {
+        font-size: 0.85rem;
+      }
+    }
+    >h1 {
+      font-size: 1.4rem;
+      margin-right: 10px;
+    }
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) {
+    height: 30%;
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > div:nth-of-type(1) {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .CheckOutPage > div {
+    flex-direction: column-reverse;
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-buttons {
+    width: 100%;
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) {
+    height: 25%;
+  }
+  .BikeDiv .BikeN > h1 {
+    font-size: 0.8rem;
+  }
+  .BikeDiv .BikeP { 
+    > div {
+      height: 60%;
+      h1:nth-of-type(1) {
+        font-size: 1.6rem;
+        margin-right: 0.3rem;
+      }
+      h1:nth-of-type(2) {
+        font-size: 0.75rem;
+      }
+    }
+    >h1 {
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
+  }
+  .ConfigDiv {
+    align-self: center;
+    >div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) {
+
+      >div {
+        width: 4.3rem;
+        height: 4.3rem; 
+      }
+    }
+  }
+  .ChecKOutWrap > div:nth-of-type(1) {
+    background: transparent;
+  }
+  .PaymentInfo {
+    width: 100%;
+  }
+  .OrderInfo {
+    width: 100%;
+    padding-left: 0px;
+  }
+  .PriceDetails {
+    color: #333;
+    margin-bottom: 5rem;
+  }
+  .CartItemF {
+    align-items: center;
+    font-size: 15px;
+    >img {
+      width: 20%;
+    }
+    >div {
+      margin-top: 0px;
+      >h1 {
+        font-size: 16px;
+      }
+      >p {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .Landing {
+    width: 99%;
+  }
+  .LandingMid {
+    flex-direction: column;
+    align-items: center;
+    height: unset;
+    opacity: 1;
+    animation: fadein 0.5s linear;
+  }
+  .LandingBike-Wrap > div:nth-child(1) {
+    background: transparent;
+  }
+  .Navbar > div {
+    color: #333;
+  }
+  .Landing-Text {
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+    >div{
+      margin-right: 10%;
+      width: 55%;
+      >h1 {
+        width: 100%;
+      }
+      >p {
+        width: 85%;
+        font-size: 0.85rem;
+        margin-top: 1.5rem;
+        line-height: 1.7;
+      }
+    }
+    >a {
+      align-self: flex-end;
+      width: 25%;
+      margin-bottom: 5%;
+      >div {
+        height: 3rem;
+        width: 100%;
+        >h2 {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .LandingBike {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .MoreInfo {
+    flex-direction: column;
+  }
+  .LandingWrap {
+    height: unset;
+  }
+  .LandingWrap > div:nth-child(1) {
+    background: transparent;
+  }
+  .BikeDiv {
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    >div {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 77%;
+    }
+    .BikeN {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      height: unset;
+      width: unset;
+    }
+    .BikeI {
+      margin-top: 1rem;
+      height: 15rem;
+      width: 95%;
+      position: relative;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .BikeP {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 22%;
+      align-self: center;
+      margin-top: 5rem;
+      h1 {
+        text-align: center;
+        align-self: flex-start;
+        font-weight: 700;
+        font-size: 2rem;
+        color: #3a4558;
+      }
+      >div {
+        width: 100%;
+        height: 3rem;
+        margin-right: 0px;
+        margin-bottom: 2rem;
+      }
+      >div h1:nth-of-type(1){
+        font-size: 1.9rem;
+        margin-left: 0.5rem;
+      }
+      >div h1:nth-of-type(2) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .ConfigDiv {
+    width: 85%;
+    align-self: center;
+    margin-bottom: 4rem;
+    >div:nth-of-type(1) { 
+      margin-top: 2rem;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      >div:nth-of-type(1) {
+        height: 2.5rem;
+      }
+      >div:nth-of-type(2) > div:nth-of-type(2) > div {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+    }
+  }
+  .CartAdded {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    >div:nth-of-type(1) {
+      margin-left: 0px;
+    }
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-SecText > h2 {
+    font-size: 1.1rem;
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-buttons > a:nth-of-type(2) {
+    margin-right: 20%;
+  }
+  .BikeDiv .BikeN > h1 {
+    font-size: 1rem;
+  }
 }

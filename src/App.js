@@ -32,9 +32,9 @@ function App() {
 
     <Route path="/More-Info" exact>  
       <animated.div className = "LandingWrap">
+      <div></div>
         <NavBar colors= {2}/>
         <animated.div className = "MoreInfo" style={props}>
-          <div></div>
           <MoreInfo />
         </animated.div>
       </animated.div>
@@ -42,6 +42,7 @@ function App() {
 
     <Route path="/Cart" exact> 
       <animated.div className = "ChecKOutWrap"> 
+      <div></div>
         <NavBar colors= {1}/>
         <CheckOutPage />
       </animated.div>

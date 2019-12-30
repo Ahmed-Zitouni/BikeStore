@@ -69,22 +69,24 @@ const MoreInfoMain = (props) => {
     return (
         <div className="BikeDiv">
             <div>
-              <h1>{BikeInfo.Name}</h1>
-            </div>
-            <div>
-              <img src = {BikeIds[BikeSelected]}/>
-              <img src = {Wheels[WheelSelected]}/>
-              <img src = {Saddles[SaddleSelected]}/>
-              <img src = {Handles[HandleSelected]}/>
+                <div className = "BikeN">
+                    <h1>{BikeInfo.Name}</h1>
+                </div>
+                <div className = "BikeI">
+                    <img src = {BikeIds[BikeSelected]}/>
+                    <img src = {Wheels[WheelSelected]}/>
+                    <img src = {Saddles[SaddleSelected]}/>
+                    <img src = {Handles[HandleSelected]}/>
+                </div>
             </div>
             {props.stage[0] === 1 &&
-                <div>
+            <div className = "BikeP">
                 <h1>$2850</h1>
                 <div onClick= {AddCart}>
                     <h1>+</h1>
                     <h1>Add to Cart</h1>
                 </div>
-                </div>
+            </div>
             }
         </div>
     )

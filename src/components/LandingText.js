@@ -9,15 +9,16 @@ const LandingPage = () => {
 
     return (
         <div className="Landing-Text">
-            <h1>S-Work Demo 8</h1>
-            <p>What is Lorem Ipsum Lorem Ipsum is simply 
-                dummy text of the printing and typesetting
-                industry Lorem Ipsum has</p>
-            <Link to = '/More-Info'>
-            
-            <div onClick={() => console.log('Done')}>
-                <h2>Custimize</h2>
+            <div>
+                <h1>S-Work Demo-8</h1>
+                <p>What is Lorem Ipsum Lorem Ipsum is simply 
+                    dummy text of the printing and typesetting
+                    industry Lorem Ipsum has</p>
             </div>
+            <Link to = '/More-Info'>
+                <div onClick={() => console.log('Done')}>
+                    <h2>Custimize</h2>
+                </div>
             </Link>
         </div>
     )

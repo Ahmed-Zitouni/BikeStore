@@ -7,7 +7,6 @@ import { BikeContext } from '../context/BikeContext';
 import {Link} from 'react-router-dom'
 
 
-
 const AddToCart = (props) => {
     const {Bikes, dispatch} = useContext(BikeContext)
     const [items, setItems] = useState({1: false, 2 : false, 3 : false})
@@ -19,7 +18,7 @@ const AddToCart = (props) => {
       {
           qty : 1,
           Size: 'One Size',
-          Name: 'Blackburn Piston Floor Pump', 
+          Name: 'Piston Floor Pump', 
           Color: 'Red',
           Price: 30,
           Img: Gear1
@@ -27,7 +26,7 @@ const AddToCart = (props) => {
       {
           qty : 1,
           Size: 'One Size',
-          Name: 'Black Wheel Rack 2x', 
+          Name: 'Wheel Rack 2x', 
           Color: 'Metallic Black',
           Price: 56,
           Img: 'https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/athu5ixyqd3gbvve95pt/58044_1.jpg'
@@ -35,7 +34,7 @@ const AddToCart = (props) => {
       {
           qty : 1,
           Size: 'One Size',
-          Name: 'Giro Adult Revel Bike Helmet', 
+          Name: 'Giro Bike Helmet', 
           Color: 'Black/Green',
           Price: 40,
           Img: Gear3
@@ -83,7 +82,7 @@ const AddToCart = (props) => {
                     <div>Countinue Shopping</div>
                   </Link>
                   <Link to="/Cart">
-                  Checkout <FaLongArrowAltRight />
+                  <div>Checkout <FaLongArrowAltRight /></div>
                   </Link>
                 </div>
                 <div className= "CartAdded-SecText">
@@ -92,7 +91,7 @@ const AddToCart = (props) => {
                 <div className= "CartAdded-products">
                   <div>
                     <img src = {Gear1}/>
-                    <p>Blackburn Piston Floor Pump</p>
+                    <p>Piston Floor Pump</p>
                     <div>
                         <h1>$30</h1>
                         <div onClick={() => AddCart(1)} style = {Clicked1}>
@@ -102,7 +101,7 @@ const AddToCart = (props) => {
                   </div>
                   <div>
                   <img src ="https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/athu5ixyqd3gbvve95pt/58044_1.jpg"/>
-                    <p>Black Wheel Rack 2x</p>
+                    <p>Wheel Rack 2x</p>
                     <div>
                         <h1>$56</h1>
                         <div onClick={() => AddCart(2)} style = {Clicked2}>
@@ -112,7 +111,7 @@ const AddToCart = (props) => {
                   </div>
                   <div>
                   <img src = {Gear3}/>
-                    <p>Giro Adult Revel Bike Helmet</p>
+                    <p>Giro Bike Helmet</p>
                     <div>
                         <h1>$40</h1>
                         <div onClick={() => AddCart(3)} style = {Clicked3}>

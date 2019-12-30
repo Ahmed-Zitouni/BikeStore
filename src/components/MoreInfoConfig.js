@@ -90,7 +90,6 @@ const MoreInfoConfig = () => {
                   <div style = {selectedPart == "Wheel" ? PartSelected : null} onClick={() => PartSelect("Wheel")}><img style = {selectedPart == "Wheel" ? PartSelectedImg : null} src={WheelOff}/></div>
                   <div style = {selectedPart == "Saddle" ? PartSelected : null} onClick={() => PartSelect("Saddle")}><img style = {selectedPart == "Saddle" ? PartSelectedImg : null} src={SaddleOff}/></div>
                   <div style = {selectedPart == "Handle" ? PartSelected : null} onClick={() => PartSelect("Handle")}><img style = {selectedPart == "Handle" ? PartSelectedImg : null} src={HandleOff}/></div>
-                  <div><img src={SaddleOff} alt="triangle with all three sides equal"/></div>
                 </div>
                 <div>
                   <h2>Wheels</h2>
