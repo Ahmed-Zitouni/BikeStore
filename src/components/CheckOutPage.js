@@ -3,6 +3,8 @@ import Gear1 from '../Icons/Gear1.jpg'
 import {Collapse} from 'react-collapse';
 import { BikeContext } from '../context/BikeContext';
 import CartItemF from '../components/CartItemF'
+import swal from 'sweetalert';
+import { Redirect } from 'react-router'
 
 const CheckOutPage = () => {
     const {Bikes, dispatch} = useContext(BikeContext)
@@ -13,6 +15,8 @@ const CheckOutPage = () => {
     const [Sect1Fin, setSect1Fin] = useState(false)
     const [Sect2Fin, setSect2Fin] = useState(false)
     const [Sect3Fin, setSect3Fin] = useState(false)
+    const [redirect, setRedirect] = useState(false)
+
 
     const [T1, setT1] = useState("")
     const [T2, setT2] = useState("")
@@ -68,7 +72,22 @@ const CheckOutPage = () => {
     const [EShip, setEShip] = useState(0)
 
     const [Total, setTotal] = useState(0)
- 
+    const Proceed = (e) => {
+        e.preventDefault()
+        //if(Sect1Fin && Sect2Fin && Sect3Fin) {
+            swal({
+                icon: "success",
+                title: "Successful Purchase",
+                text: "Thank You For Shopping",
+              }).then( x => {
+                setRedirect(true)
+            })
+            dispatch(prevState => {
+            return ({...prevState, Cart : []
+                })
+            })
+       // }
+    }
     const ClickSect = (sect) => {
         if (sect === 1) setSect1Open(!Sect1Open)
         if (sect === 2) setSect1Open(!Sect2Open)
@@ -97,21 +116,33 @@ const CheckOutPage = () => {
         })
         return Temp
     }
+    const SectOpen = {
+        color: '#333'
+    }
     const SectDone = {
         background: "#ff5e57"
     }
     const SectNotDone = {
         background: "#424e73"
     }
+    const FormDone = {
+        background: "#ff5e57",
+        cursor: "pointer"
+    }
+    const FormNotDone = {
+        background:"#626571"
+    }
     return (
+        
         <div className = "CheckOutPage">
+            {redirect ? <Redirect to='/'/> : null}
             <h1>CheckOut</h1>
             <div>
                 <div className = "PaymentInfo">
                         <div className = "MainSection">
                             <div>
                                 <h1 style = {Sect1Fin ? SectDone : SectNotDone}>1</h1>
-                                <h1 onClick={() => setSect1Open(!Sect1Open)}>{'SHIPPING ADDRESS & CONTACT INFO'}</h1>
+                                <h1 style = {Sect1Open ? SectOpen : null} onClick={() => setSect1Open(!Sect1Open)}>{'SHIPPING ADDRESS & CONTACT INFO'}</h1>
                             </div>
                             <Collapse isOpened={Sect1Open}>
                             <form className = "Payment-Sect1">
@@ -139,7 +170,7 @@ const CheckOutPage = () => {
                         <div className = "MainSection">
                             <div>
                                 <h1 style = {Sect2Fin ? SectDone : SectNotDone}>2</h1>
-                                <h1 onClick={() => setSect2Open(!Sect2Open)}>DELIVERY OPTIONS</h1>
+                                <h1 style = {Sect2Open ? SectOpen : null} onClick={() => setSect2Open(!Sect2Open)}>DELIVERY OPTIONS</h1>
                             </div>
                             <Collapse isOpened={Sect2Open}>
                             <form className = "Payment-Sect2">
@@ -160,10 +191,10 @@ const CheckOutPage = () => {
                         <div className = "MainSection">
                             <div>
                                 <h1 style = {Sect3Fin ? SectDone : SectNotDone}>3</h1>
-                                <h1 onClick={() => setSect3Open(!Sect3Open)}>PAYMENT</h1>
+                                <h1 style = {Sect3Open ? SectOpen : null} onClick={() => setSect3Open(!Sect3Open)}>PAYMENT</h1>
                             </div>
                             <Collapse isOpened={Sect3Open}>
-                            <form className = "Payment-Sect3">
+                            <form className = "Payment-Sect3" onSubmit = {(e) => Proceed(e)}>
                                 <div>
                                     <h1>Credit card</h1>
                                     <img src = "https://dstqaa92re5c4.cloudfront.net/Images/Shared/Icons/icon_cards.png"/>
@@ -179,6 +210,10 @@ const CheckOutPage = () => {
                                 <div>
                                     <h1>Experation (MM/YY)</h1>
                                     <input type = "number" placeholder = "MM/YY" value ={T11} onChange = {(e) => TextInput(e, 11)}/>
+                                </div>
+                                <div className = "SubmitBtn">
+                                    <input style = {Sect1Fin && Sect2Fin && Sect3Fin ? FormDone : FormNotDone} type="submit" value="Proceed" />
+                                    <p>{!Sect1Fin && T8.length > 0 ? "Invalid Email" : ""}</p>
                                 </div>
                             </form>
                             </Collapse>

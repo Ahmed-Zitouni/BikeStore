@@ -19,34 +19,12 @@ const BikeContextProvider = (props) => {
                 Img: Bike1All
             }
         },
-        Cart: [
-            {
-                qty : 1,
-                Size: 'Medium/ Large',
-                Name: 'TCR Advanced 2 Disc Pro Compact', 
-                Color: 'Metallic Black',
-                Price: 1400,
-                Img: Bike1All
-            },
-            {
-                qty : 1,
-                Size: 'Medium/ Large',
-                Name: 'TCR Advanced 2 Disc Pro Compact', 
-                Color: 'Metallic Black',
-                Price: 1400,
-                Img: Bike1All
-            },
-            {
-                qty : 1,
-                Size: 'Medium/ Large',
-                Name: 'TCR Advanced 2 Disc Pro Compact', 
-                Color: 'Metallic Black',
-                Price: 1400,
-                Img: Bike1All
-            }
-        ],
+        Cart: [],
         Display : {
             CartOpen: false,
+            BikesOpen: false,
+            GearOpen: false,
+            Stage: 1
         }
     })
     return (

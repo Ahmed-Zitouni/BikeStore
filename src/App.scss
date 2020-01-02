@@ -90,6 +90,21 @@ table {
     left: 0;
   }
 }
+.Gallery__NavigationArrow {
+  opacity: 1 !important;
+  >button {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 0 !important;
+    background: rgba(23, 24, 29, 0.6) !important;
+    >svg {
+      color: white !important;
+      stroke-width: 3px !important;
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+}
 .App {
   text-align: center;
   width: 100%;
@@ -100,7 +115,18 @@ table {
   display: flex;
   flex-direction: column;
 }
+#CartItems {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background: $Secondary;
+    border-radius: 50%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
 .Navbar {
+  user-select: none;
   grid-area: n;
   display: flex;
   flex-direction: row;
@@ -127,10 +153,31 @@ table {
     justify-content: flex-end;
     width: 50%;
     height: 100%;
-    >div {
+    >a {
       display: flex;
       align-items: center;
       width: 15%;
+      height: 100%;
+      cursor: pointer;
+    }
+    >a:nth-of-type(1) {
+      width: 20%;
+      >img {
+        width: 100%;
+        height: 100%; 
+        min-width: 7rem;
+      }
+      >img:nth-of-type(2) {
+        width: 100%;
+        height: 100%; 
+        min-width: 8rem;
+        display: none;
+      }
+    }
+    >div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 100%;
       cursor: pointer;
       >li {
@@ -142,17 +189,33 @@ table {
           margin-right: 10px;
           font-size: 1.5rem;
         }
-        >div:nth-of-type(1) {
-          width: 24px;
-          height: 24px;
-          display: flex;
-          background: $Secondary;
-          border-radius: 50%;
-          color: white;
-          align-items: center;
-          justify-content: center;
-        }
       }
+    }
+  }
+}
+.NavBox {
+  width: 100%;
+  height: 100%;
+  padding: 0px 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CartIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  >li {
+    font-size: 0.9rem;
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    >svg {
+      margin-right: 10px;
+      font-size: 1.5rem;
     }
   }
 }
@@ -170,6 +233,7 @@ table {
     >h2 {
       width: 50%;
       text-align: left;
+      font-weight: 700;
     }
   }
   >div:nth-of-type(4) {
@@ -177,7 +241,6 @@ table {
     input {
       width: 1.0rem;
       height: 1.3rem;
-      font-size: 1rem;
       text-align: center;
       border: '2px solid rgba(0,0,0,0)'
     }
@@ -202,7 +265,6 @@ table {
 }
 .CartPopUp {
   width: 700px;
-  margin-top: 0.5rem;
   background-color: white;
   padding: 0 20px 20px;
   border: 1px solid #aaa;
@@ -211,7 +273,7 @@ table {
   box-shadow: 0 0 10px rgba(0,0,0,.5);
   position: absolute;
   right: 0;
-  top: 40px;
+  top: 60px;
   display: flex; 
   flex-direction: column;
   cursor: default;
@@ -401,7 +463,7 @@ table {
     width: 50%;
     h1 {
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 1.7rem;
       padding-right: 15%;
       flex: 1 1;
       text-align: left;
@@ -587,13 +649,13 @@ table {
 
 
 .CartAdded {
-  width: 46%;
+  width: 39%;
   height: 100%;
   >div:nth-of-type(1) {
-    margin-left: 6rem;
+    margin-left: 2rem;
     margin-top: 2rem;
     height: 90%;
-    width: 70%;
+    width: 75%;
     display: flex;
     flex-direction: column;
 
@@ -683,62 +745,62 @@ table {
           font-size: 1.2rem;
         }
       }
-      >.CartAdded-products { 
-        height: 15rem;
+    }
+  }
+}
+.CartAdded-products { 
+  height: 15rem;
+  display: flex;
+  margin-top: 1rem;
+  >div:nth-of-type(2) {
+    margin: 0px 8%;
+  }
+  >div {
+    border-radius: 0.9rem 0.9rem 0 0;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    >img {
+      height: 30%;
+      width: 100%;
+      object-fit: contain;
+      align-self: center;
+    }
+    >p {
+      justify-self: flex-start;
+      font-size: 0.78rem;
+      display: flex;
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.3;
+      height: 25%;
+      width: 100%;
+    }
+    >div {
+      display: flex;
+      flex-direction: row;
+      margin-top: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      >h1 {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      >div {
+        cursor: pointer;
+        height: 1.8rem;
+        width: 1.8rem;
+        border: 2px solid #f4f2f4;
         display: flex;
-        margin-top: 1rem;
-        >div:nth-of-type(2) {
-          margin: 0px 8%;
-        }
-        >div {
-          border-radius: 0.9rem 0.9rem 0 0;
-          width: 28%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          >img {
-            height: 30%;
-            width: 100%;
-            object-fit: contain;
-            align-self: center;
-          }
-          >p {
-            justify-self: flex-start;
-            font-size: 0.78rem;
-            display: flex;
-            text-align: center;
-            margin-top: 1rem;
-            line-height: 1.3;
-            height: 25%;
-            width: 100%;
-          }
-          >div {
-            display: flex;
-            flex-direction: row;
-            margin-top: 0.5rem;
-            align-items: center;
-            justify-content: center;
-            >h1 {
-              font-size: 1.1rem;
-              font-weight: 600;
-            }
-            >div {
-              cursor: pointer;
-              height: 1.8rem;
-              width: 1.8rem;
-              border: 2px solid #f4f2f4;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-left: 10%;
-              border-radius: 15%;
-              user-select: none;
-              p {
-                font-size: 1.2rem;
-                user-select: none;
-              }
-            }
-          }
+        align-items: center;
+        justify-content: center;
+        margin-left: 10%;
+        border-radius: 15%;
+        user-select: none;
+        p {
+          font-size: 1.2rem;
+          user-select: none;
         }
       }
     }
@@ -884,6 +946,7 @@ table {
     background: $Main;
     top: 0;
     right: 0;
+    min-height: 100vh;
   }
 }
 .CheckOutPage {
@@ -1045,6 +1108,252 @@ table {
     }
   }
 }
+#BikeO {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: -10%;
+}
+#GearDrop {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  background: #fff;
+  overflow: hidden;
+  right: 0;
+  z-index: 1000;
+  top: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  height: 19rem;
+  width: 60%;
+  ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    >li:hover { 
+      background: #ddd;
+    }
+    >li {
+      color: #111;
+      letter-spacing: .2rem;
+      font-weight: 700;
+      margin-right: 30px;
+      margin: 0 auto;
+      background: #eee;
+      border: 1px solid #eee;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      line-height: 26px;
+      width: 65px;
+      display: block;
+      position: relative;
+      font-size: 35px;
+      cursor: pointer;
+    }
+  }
+  .Products { 
+    height: 13rem;
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 5%;
+    color: #333;
+    >div:nth-of-type(3) {
+      border-right: none;
+    }
+    >div {
+      width: 24%;
+      height: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #ddd;
+      >img {
+        height: 35%;
+        width: 100%;
+        object-fit: contain;
+        align-self: center;
+      }
+      >p {
+        font-size: 0.78rem;
+        text-align: center;
+        margin-top: 1rem;
+        line-height: 1.3;
+        height: 25%;
+        width: 60%;
+      }
+      >div {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        >h1 {
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+        >div {
+          cursor: pointer;
+          height: 1.6rem;
+          width: 1.8rem;
+          border: 2px solid #f4f2f4;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10%;
+          border-radius: 15%;
+          user-select: none;
+          p {
+            font-size: 1.2rem;
+            user-select: none;
+          }
+        }
+      }
+    }
+  }
+}
+#BikeDrop {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  background: #fff;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  top: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  height: 19rem;
+  a:nth-of-type(4) {
+    border-right: none;
+  }
+  a {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    width: 16.8%;
+    align-items: center;
+    border-right: 1px solid #eee;
+    cursor: pointer;
+    height: 50%;
+    img {
+      height: 65%;
+      object-fit: contain;
+      width: 100%;
+    }
+    h1 {
+      color: #333;
+      font-size: 1.14rem;
+      font-weight: 600;
+      padding-top: 10px;
+      text-align: left;
+      width: 85%;
+      padding-left: 15%;
+    }
+  }
+  >ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    >li:hover { 
+      background: #ddd;
+    }
+    >li {
+      color: #111;
+      letter-spacing: .2rem;
+      font-weight: 700;
+      margin-right: 30px;
+      margin: 0 auto;
+      background: #eee;
+      border: 1px solid #eee;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      line-height: 26px;
+      width: 65px;
+      display: block;
+      position: relative;
+      font-size: 35px;
+      cursor: pointer;
+    }
+  }
+}
+#DropDown {
+  width: 100vw;
+  height: 30%;
+  left: -68px;
+  height: 24rem;
+  align-self: center;
+  margin-top: 0.5rem;
+  background-color: #121212;
+  box-shadow: 0 15px 50px -24px #000;
+  position: absolute;
+  top: 40px;
+  display: block;
+  flex-direction: column;
+  cursor: default;
+  position: absolute;
+  color: white;
+  padding-left: 5%;
+  display:none;
+  ul {
+    display: inline-block;
+    float: left;
+    padding-top: 3rem;
+    font-size: 1.05rem;
+    width: 20%;
+    li {
+      text-align: left;
+      padding: 10px 0px;
+      cursor: pointer;
+    }
+  }
+  img {
+    width: 76%;
+    float: left;
+    height: 100%;
+    object-fit: cover;
+    display: inline-block;
+    position: relative;
+  }
+}
+#DDMain {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: unset; 
+  border-radius: unset; 
+  color: unset; 
+  align-items: unset; 
+  justify-content: unset; 
+  >div {
+    top: 90px;
+    width: 19%;
+    color: #fff;
+    position: absolute;
+    right: 14.666667%;
+    text-align: left;
+    >h1 {
+      font-size: 42px;
+      line-height: 42px;
+      margin-top: 0;
+      font-family: DIN W01 Cond Medium,sans-serif;
+      font-weight: 400;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+    }
+    >p {
+      font-family: Helvetica,sans-serif;
+      font-size: 14px;
+      line-height: 28px;
+      margin-top: 20px;
+    }
+  }
+}
 .Payment-Sect1 {
   display: flex;
   align-items: flex-start;
@@ -1106,6 +1415,7 @@ table {
   margin-top: 1rem;
   font-size: 15px;
   font-weight: 700;
+  margin-bottom: 5rem;
   >div:nth-of-type(1) {
     color: $Secondary;
     font-weight: 600;
@@ -1125,6 +1435,24 @@ table {
       flex: 1 1;
       display: flex;
     }
+  }
+}
+.SubmitBtn {
+  >input:nth-of-type(1) {
+    height: 2.2rem;
+    width: 7rem;
+    background: #ff5e57;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+  }
+  >p {
+    align-self: center;
+    margin-left: 2rem;
+    color: red;
+    font-weight: 600;
   }
 }
 .CartItemF {
@@ -1291,6 +1619,19 @@ table {
 }
 
 @media only screen and (max-width: 830px) {
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-buttons > a:nth-of-type(2) svg {
+    margin-left: 1px;
+  }
+  .CartPopUp {
+    width: 80%;
+  }
+  .CartItems > div:nth-of-type(1) > img {
+    width: 30%;
+    margin-right: 15px;
+  }
+  .CartItems > div {
+    font-size: 13px;
+  }
   .CheckOutPage > div {
     flex-direction: column-reverse;
   }
@@ -1366,6 +1707,12 @@ table {
   @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+  }
+  .Navbar > div > a:nth-of-type(1) > img:nth-of-type(1) {
+    display: none;
+  }
+  .Navbar > div > a:nth-of-type(1) > img:nth-of-type(2) {
+    display: flex;
   }
   .Landing {
     width: 99%;
@@ -1499,10 +1846,16 @@ table {
         height: 2.5rem;
       }
       >div:nth-of-type(2) > div:nth-of-type(2) > div {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 4.5rem;
+        height: 4.5rem;
       }
     }
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-top {
+    display: none;
+  }
+  .BikeDiv {
+    justify-content: center;
   }
   .CartAdded {
     width: 100%;
@@ -1521,4 +1874,12 @@ table {
   .BikeDiv .BikeN > h1 {
     font-size: 1rem;
   }
+  .CartItems > div {
+    font-size: 10px;
+  }
+  .CartItems > div:nth-of-type(4) input{
+    width: 0.6rem;
+    height: 1rem;
+  }
+
 }

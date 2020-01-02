@@ -1,23 +1,22 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import {FaLongArrowAltRight} from 'react-icons/fa'
 import {MdAddShoppingCart, MdCheck} from 'react-icons/md'
 import Gear1 from '../Icons/Gear1.jpg'
 import Gear3 from '../Icons/Gear3.jpg'
 import { BikeContext } from '../context/BikeContext';
 import {Link} from 'react-router-dom'
+import Acessories from './Acessories'
 
 
-const AddToCart = (props) => {
+const AddToCart = () => {
     const {Bikes, dispatch} = useContext(BikeContext)
+    const Display = Bikes.Display
     const [items, setItems] = useState({1: false, 2 : false, 3 : false})
-    const [Clicked1, setClicked1] = useState({})
-    const [Clicked2, setClicked2] = useState({})
-    const [Clicked3, setClicked3] = useState({})
     const Cart = Bikes.Cart
     const Data =  [
       {
           qty : 1,
-          Size: 'One Size',
+          Size: 'n/a',
           Name: 'Piston Floor Pump', 
           Color: 'Red',
           Price: 30,
@@ -25,7 +24,7 @@ const AddToCart = (props) => {
       },
       {
           qty : 1,
-          Size: 'One Size',
+          Size: 'n/a',
           Name: 'Wheel Rack 2x', 
           Color: 'Metallic Black',
           Price: 56,
@@ -33,38 +32,56 @@ const AddToCart = (props) => {
       },
       {
           qty : 1,
-          Size: 'One Size',
+          Size: 'n/a',
           Name: 'Giro Bike Helmet', 
           Color: 'Black/Green',
           Price: 40,
           Img: Gear3
       }
-  ]
-    const AddCart = (item) => {
-        let old = items[item]
-        setItems({...items, [item] : !old})
-        if(item === 1) {
-            !items[item] ? setClicked1({background: '#ff5e57', boarder: '2px solid #ff5e57'}) : setClicked1({})
-        }
-        if(item === 2) {
-            !items[item] ? setClicked2({background: '#ff5e57', boarder: '2px solid #ff5e57'}) : setClicked2({})
-        }
-        if(item === 3) {
-            !items[item] ? setClicked3({background: '#ff5e57', boarder: '2px solid #ff5e57'}) : setClicked3({})
-        }
-        if (!Cart.some(ind => ind.Name === Data[item - 1].Name)) {
-          let NewCart = Bikes.Cart
-          NewCart.push(Data[item - 1])
-          dispatch(prevState => {
-            return ({...prevState, Cart : 
-            [...NewCart]
-            })
+  ] 
+      const Clicked = {background: '#ff5e57', boarder: '2px solid #ff5e57'}
+
+      const CloseAll = () => {
+        dispatch(prevState => {
+          return ({...prevState, Display : {
+                      ...Display,
+                      CartOpen:  false,
+                      BikesOpen: false,
+                      Stage: 1
+                  }
+              })
           })
-        }
+      }
+      const AddCart = (item) => {
+      let old = items[item]
+      setItems({...items, [item] : !old})
+
+      if (!Cart.some(ind => ind.Name === Data[item - 1].Name)) {
+        let NewCart = Bikes.Cart
+        NewCart.push(Data[item - 1])
+        dispatch(prevState => {
+          return ({...prevState, Cart : 
+          [...NewCart]
+          })
+        })
+      } else {
+
+        dispatch(prevState => {
+        return ({...prevState, Cart : [
+                ...Cart.filter(value => Data[item - 1].Name !== value.Name)
+            ]
+            })
+        })
+        setItems(prevState => ({...prevState, [item]: false}))
+      }
     }
-    const GoBack = () => {
-        props.stage[1](1)
-    }
+    useEffect(() => {
+      Cart.map(list => {
+        if(list.Name === Data[0].Name) setItems(prevState => ({...prevState, '1' : true}))
+        if(list.Name === Data[1].Name) setItems(prevState => ({...prevState, '2' : true}))
+        if(list.Name === Data[2].Name) setItems(prevState => ({...prevState, '3' : true}))
+      })
+    }, [Cart])
     return (
         <div className="CartAdded">
             <div>
@@ -78,7 +95,7 @@ const AddToCart = (props) => {
                   <h1>Added To Cart</h1>
                 </div>
                 <div className= "CartAdded-buttons">
-                  <Link to="/">
+                  <Link onClick={() => CloseAll()} to="/">
                     <div>Countinue Shopping</div>
                   </Link>
                   <Link to="/Cart">
@@ -88,38 +105,7 @@ const AddToCart = (props) => {
                 <div className= "CartAdded-SecText">
                   <h2>Acessories</h2>
                 </div>
-                <div className= "CartAdded-products">
-                  <div>
-                    <img src = {Gear1}/>
-                    <p>Piston Floor Pump</p>
-                    <div>
-                        <h1>$30</h1>
-                        <div onClick={() => AddCart(1)} style = {Clicked1}>
-                            {!items[1] ? <p>+</p> : <MdCheck style={{color: 'white', fontSize: '1.2rem'}}/>}
-                        </div>
-                    </div>
-                  </div>
-                  <div>
-                  <img src ="https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/athu5ixyqd3gbvve95pt/58044_1.jpg"/>
-                    <p>Wheel Rack 2x</p>
-                    <div>
-                        <h1>$56</h1>
-                        <div onClick={() => AddCart(2)} style = {Clicked2}>
-                            {!items[2] ? <p>+</p> : <MdCheck style={{color: 'white', fontSize: '1.2rem'}}/>}
-                        </div>
-                    </div>
-                  </div>
-                  <div>
-                  <img src = {Gear3}/>
-                    <p>Giro Bike Helmet</p>
-                    <div>
-                        <h1>$40</h1>
-                        <div onClick={() => AddCart(3)} style = {Clicked3}>
-                            {!items[3] ? <p>+</p> : <MdCheck style={{color: 'white', fontSize: '1.2rem'}}/>}
-                        </div>
-                    </div>
-                  </div>
-                </div>
+                <Acessories />
               </div>
             </div>
         </div>

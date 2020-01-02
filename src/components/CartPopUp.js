@@ -29,6 +29,7 @@ const CartPopUp = () => {
         } else {
             setIsScroll(false)
         }
+        
         setTotal(FindTotal())
     }, [Items])
     const Scroll = {
@@ -57,7 +58,7 @@ const CartPopUp = () => {
                 <div>
                     <h1>Products</h1>
                     <h1>Color</h1>
-                    <h1>Size</h1>
+                    <h1>Type</h1>
                     <h1>qty</h1>
                     <h1 style = {IsScroll ? ScrollMove : null}>Total</h1>
                 </div>
@@ -69,7 +70,7 @@ const CartPopUp = () => {
             </div>
             <div>
                 <div><h1>Total: ${Total}</h1></div>
-                <Link onclick={() => CloseCart()} to ="/Cart"><p>Proceed to checkout </p></Link>    
+                <Link onClick={() => CloseCart()} to ="/Cart"><p>Proceed to checkout </p></Link>    
             </div>
         </div>
     )

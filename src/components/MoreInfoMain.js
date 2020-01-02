@@ -16,16 +16,22 @@ import Wheel4 from '../Icons/Wheel4.png'
 import Saddle4 from '../Icons/Saddle4.png'
 import Handle4 from '../Icons/Handle4.png'
 
+import {AllData} from '../context/Data';
 import { BikeContext } from '../context/BikeContext';
 
 const MoreInfoMain = (props) => {
     const {Bikes, dispatch} = useContext(BikeContext)
 
+    const Display = Bikes.Display
+    const Stage = Bikes.Display.Stage
     const BikeSelected = Bikes.BikeData.BikeId
     const BikeInfo = Bikes.BikeData.BikeInfo
     const WheelSelected = Bikes.BikeData.Wheel
     const SaddleSelected = Bikes.BikeData.Saddle
     const HandleSelected = Bikes.BikeData.Handle
+    const BikeAllData = AllData.BikeInfo[BikeSelected - 1]
+
+
     const BikeIds = {
         1: Bike1,
         2: Bike2,
@@ -50,27 +56,40 @@ const MoreInfoMain = (props) => {
         3: Handle3,
         4: Handle4
     }
+    const TypeStyle = {
+        1 : "Defualt",
+        2 : "Smooth",
+        3 : "Jumper",
+        4 : "Expert"
+    }
     const BikeCart = {
         qty : 1,
-        Size: 'One Size',
-        Name: 'TCR Advanced 2 Disc Pro Compact', 
-        Color: 'Metalic',
-        Price: 1400,
-        Img: BikeIds[BikeSelected]
+        Atr: 'One Size',
+        Name: BikeAllData.Name, 
+        Color: BikeAllData.Color,
+        Price: BikeAllData.Price,
+        Img: BikeAllData.Full,
+        Size: `${TypeStyle[WheelSelected]} ${TypeStyle[SaddleSelected]} ${TypeStyle[HandleSelected]}`
     }
     const AddCart = () => {
         let NewCart = Bikes.Cart
         NewCart.push(BikeCart)
         dispatch(prevState => {
-        return ({...prevState, Cart : [...NewCart] })
+        return ({...prevState,
+            Display: {
+                ...Display,
+                Stage: 2
+            },
+            Cart : [...NewCart] }
+            
+            )
         })
-        props.stage[1](2)
     }
     return (
         <div className="BikeDiv">
             <div>
                 <div className = "BikeN">
-                    <h1>{BikeInfo.Name}</h1>
+                    <h1>{BikeAllData.Name}</h1>
                 </div>
                 <div className = "BikeI">
                     <img src = {BikeIds[BikeSelected]}/>
@@ -79,9 +98,9 @@ const MoreInfoMain = (props) => {
                     <img src = {Handles[HandleSelected]}/>
                 </div>
             </div>
-            {props.stage[0] === 1 &&
+            {Stage === 1 &&
             <div className = "BikeP">
-                <h1>$2850</h1>
+                <h1>${BikeAllData.Price}</h1>
                 <div onClick= {AddCart}>
                     <h1>+</h1>
                     <h1>Add to Cart</h1>

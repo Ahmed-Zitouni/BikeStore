@@ -5,15 +5,29 @@ import Landing from '../Icons/Landing.jpg'
 
 import { BikeContext } from '../context/BikeContext';
 
+const Data = [{
+    Name: "REVOLT 3",
+    Desc: "Designed with Compact Road geometry and built with Advanced-grade composite frame material, the TCR Advanced Disc delivers the best on-the-road efficiency of any bike in its class."
+}, {
+    Name: "YUKON 2",
+    Desc: "Ride farther and faster with an all-new composite frameset that’s engineered with endurance geometry and built-in compliance. Handcrafted with Advanced-grade composite material."
+}, {
+    Name: "TCX ADVANCED",
+    Desc: "Pros settle for nothing less than perfection. The TCX Advanced Pro features a superlight Advanced-grade composite frame that’s handcrafted with race-proven geometry"
+}, {
+    Name: "ROAM 4 DISC",
+    Desc: "Engineered for the beautiful chaos of cyclocross racing.  Its Advanced-grade composite frame makes it easier to power up steep climbs and rail descents in sand, mud or ice."
+}
+]
 const LandingPage = () => {
+    const {Bikes, dispatch} = useContext(BikeContext)
+    const BikeId = Bikes.BikeData.BikeId
 
     return (
         <div className="Landing-Text">
             <div>
-                <h1>S-Work Demo-8</h1>
-                <p>What is Lorem Ipsum Lorem Ipsum is simply 
-                    dummy text of the printing and typesetting
-                    industry Lorem Ipsum has</p>
+                <h1>{Data[BikeId - 1].Name}</h1>
+                <p>{Data[BikeId - 1].Desc}</p>
             </div>
             <Link to = '/More-Info'>
                 <div onClick={() => console.log('Done')}>

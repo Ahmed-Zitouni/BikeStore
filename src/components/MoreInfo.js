@@ -1,15 +1,17 @@
-import React, {useState} from 'react' 
+import React, {useContext} from 'react' 
 import MoreInfoMain from './MoreInfoMain'
 import MoreInfoConfig from './MoreInfoConfig'
 import AddToCart from './AddToCart'
+import { BikeContext } from '../context/BikeContext';
 
 const MoreInfo = () => {
-    const [ShopStage, setShopStage] = useState(1)
+    const {Bikes} = useContext(BikeContext)
+    const Stage = Bikes.Display.Stage
 
     return (
         <>
-            <MoreInfoMain stage={[ShopStage, setShopStage]}/>
-            {ShopStage == 1 ? <MoreInfoConfig stage={[ShopStage, setShopStage]}/> : <AddToCart stage={[ShopStage, setShopStage]}/>}
+            <MoreInfoMain/>
+            {Stage == 1 ? <MoreInfoConfig/> : <AddToCart/>}
         </>
     )
 }

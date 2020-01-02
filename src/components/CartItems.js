@@ -52,7 +52,6 @@ const CartItems = (props) => {
     }, [Cart])
 
     const GetPrice = () => {
-        console.log(!typeof StateQyt == 'number', Data.Price)
         if (!typeof StateQyt == 'number' || StateQyt == "") return Data.Price
         return Data.Price * parseInt(Data.qty, 10)
     } 
