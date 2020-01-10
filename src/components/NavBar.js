@@ -13,6 +13,7 @@ import MainIconW from '../Icons/MainIconW.svg';
 const NavBar = (props) => {
     const {Bikes, dispatch} = useContext(BikeContext)
     const Items = Bikes.Cart
+    const DarkM = props.Mode
     const Display = Bikes.Display
     let IsCartOpen = Bikes.Display.CartOpen
     let IsBikesOpen = Bikes.Display.BikesOpen
@@ -87,6 +88,9 @@ const NavBar = (props) => {
         })
         }
     }
+    const DarkS = {
+        color: "white"
+    }
     const Selected = {
         color: '#ff5e57',
         fontWeight: '600',
@@ -96,19 +100,19 @@ const NavBar = (props) => {
         <div className = "Navbar">
 <div style = {Colors == 1 ? Dark : NormalColor}><Link to = "/" onClick = {() => CloseAll()}><img src = {Colors == 1 ? MainIcon : MainIconW}/><img src = {MainIcon} /></Link></div>
             <div style = {Colors == 1 ? NormalColor : Dark}>
-                <div>
+                <div style={DarkM ? DarkS : null}>
                     <div className = "NavBox" onClick = {() => OpenBike()}>
                         <li style = {IsBikesOpen ? Selected : null}>Bikes</li>
                     </div>
                         {IsBikesOpen ? <BikeDropDown /> : <></>}
                 </div>
-                <div>
+                <div style={DarkM ? DarkS : null}>
                     <div className = "NavBox" onClick = {() => OpenGear()}>
                         <li style = {IsGearOpen ? Selected : null}>Gear</li>
                     </div>
                     {IsGearOpen ? <AcessoriesDrop /> : <></>}
                 </div>
-                <div>
+                <div style={DarkM ? DarkS : null}>
                     <div className = "CartIcon NavBox" onClick={() => OpenCart()}>
                         <li>
                             <IoMdCart /> 

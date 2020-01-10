@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import NavBar from './NavBar'
 import {Link} from 'react-router-dom'
-import Landing from '../Icons/Landing.jpg'
 
 import { BikeContext } from '../context/BikeContext';
 

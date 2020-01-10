@@ -12,7 +12,7 @@ const LandingPage = (props) => {
         <>
         <div className = "LandingBike-Wrap"> <div></div> </div>
         <animated.div className = "Landing">
-            <NavBar colors = {1} />
+            <NavBar colors = {1} Mode={true}/>
             <div className="LandingMid">
                 <LandingText />
                 <LandingBike/>

@@ -13,7 +13,47 @@ const LandingBike = (props) => {
     const [imageNum, setImageNum] = useState(0)
     let Type = Bikes.BikeData.Type
     const BikeData = Bikes.BikeData
-
+    
+    useEffect(() => {
+        let ArrowL = document.getElementsByClassName("Gallery__NavigationArrow")[0]
+        let ArrowR = document.getElementsByClassName("Gallery__NavigationArrow")[1]
+        if(imageNum === 0) {
+            ArrowL.style.display = "none"
+        } else {
+            ArrowL.style.display = "flex"
+        }
+        if(imageNum === 3) {
+            ArrowR.style.display = "none"
+        } else {
+            ArrowR.style.display = "flex"
+        }
+        /*
+        ArrowL.addEventListener("click", () => {
+            if(imageNum === 0) {
+                ArrowL.style.display = "none"
+            } else {
+                ArrowL.style.display = "flex"
+            }
+            if(imageNum === 3) {
+                ArrowR.style.display = "none"
+            } else {
+                ArrowR.style.display = "flex"
+            }
+        })
+        ArrowR.addEventListener("click", () => {
+            if(imageNum === 0) {
+                ArrowL.style.display = "none"
+            } else {
+                ArrowL.style.display = "flex"
+            }
+            if(imageNum === 3) {
+                ArrowR.style.display = "none"
+            } else {
+                ArrowR.style.display = "flex"
+            }
+        }) 
+        */
+    }, [imageNum])       
     const BikeSelected =  {
         1 : [1, 2, 3, 4],
         }   
