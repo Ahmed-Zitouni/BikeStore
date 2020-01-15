@@ -79,6 +79,7 @@ const LandingBike = (props) => {
             })
         setImageNum(0)
       }, [Type]);
+      let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
     return (
 
         <div className="LandingBike">
@@ -89,9 +90,9 @@ const LandingBike = (props) => {
                 onRequestChange={i => UpdateImage(i)}
             >
                 <GalleryImage objectFit="contain" key={'1'} src={Bike1All} />
-                <GalleryImage objectFit="contain" key={'2'} src={Bike2All} />
-                <GalleryImage objectFit="contain" key={'1'} src={Bike3All} />
-                <GalleryImage objectFit="contain" key={'2'} src={Bike4All} />
+                <GalleryImage objectFit="contain" key={'2'} src={`${ImgUrl}Bike2All.png`} />
+                <GalleryImage objectFit="contain" key={'1'} src={`${ImgUrl}Bike3All.png`} />
+                <GalleryImage objectFit="contain" key={'2'} src={`${ImgUrl}Bike4All.png`} />
             </Gallery>
         }
         {Type === 2 &&
