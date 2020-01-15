@@ -32,7 +32,6 @@ const NavBar = (props) => {
                 BikesOpen : false,
                 CartOpen : false,
                 GearOpen : false,
-                Stage: 1
                 }
             })
         })

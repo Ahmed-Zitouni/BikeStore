@@ -26,6 +26,7 @@ const MoreInfoConfig = () => {
     const {Bikes, dispatch} = useContext(BikeContext)
     const [selectedPart, setSelectedPart] = useState("Wheel")
     const [selectedItem, setSelectedItem] = useState(1)
+    let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
     const PartSelected = { 
       background : '#3fbafb', 
       boxShadow: "rgba(0, 0, 255, 0.1) -5px 8px 9px 0px", 
@@ -50,22 +51,22 @@ const MoreInfoConfig = () => {
     }
     let BikeImg = {
         Wheel : {
-            1 : Wheel1Sm,
-            2 : Wheel2Sm,
-            3 : Wheel3Sm,
-            4 : Wheel4Sm
+            1 : `${ImgUrl}Wheel1Sm.png`,
+            2 : `${ImgUrl}Wheel2Sm.png`,
+            3 : `${ImgUrl}Wheel3Sm.png`,
+            4 : `${ImgUrl}Wheel4Sm.png`
         },
         Handle : {
-            1 : Handle1Sm,
-            2 : Handle2Sm,
-            3 : Handle3Sm,
-            4 : Handle4Sm
+            1 : `${ImgUrl}Handle1Sm.png`,
+            2 : `${ImgUrl}Handle2Sm.png`,
+            3 : `${ImgUrl}Handle3Sm.png`,
+            4 : `${ImgUrl}Handle4Sm.png`
         },
         Saddle : {
-            1 : Saddle1Sm,
-            2 : Saddle2Sm,
-            3 : Saddle3Sm,
-            4 : Saddle4Sm
+            1 : `${ImgUrl}Saddle1Sm.png`,
+            2 : `${ImgUrl}Saddle2Sm.png`,
+            3 : `${ImgUrl}Saddle3Sm.png`,
+            4 : `${ImgUrl}Saddle4Sm.png`
         }
     }
     const PartSel = {

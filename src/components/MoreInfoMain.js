@@ -31,30 +31,30 @@ const MoreInfoMain = (props) => {
     const HandleSelected = Bikes.BikeData.Handle
     const BikeAllData = AllData.BikeInfo[BikeSelected - 1]
 
-
+    let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
     const BikeIds = {
-        1: Bike1,
-        2: Bike2,
-        3: Bike3,
-        4: Bike4
+        1: `${ImgUrl}Bike1.png`,
+        2: `${ImgUrl}Bike2.png`,
+        3: `${ImgUrl}Bike3.png`,
+        4: `${ImgUrl}Bike4.png`
     }
     const Wheels = {
-        1: Wheel1,
-        2: Wheel2,
-        3: Wheel3,
-        4: Wheel4
+        1: `${ImgUrl}Wheel1.png`,
+        2: `${ImgUrl}Wheel2.png`,
+        3: `${ImgUrl}Wheel3.png`,
+        4: `${ImgUrl}Wheel4.png`
     }
     const Saddles = {
-        1: Saddle1,
-        2: Saddle2,
-        3: Saddle3,
-        4: Saddle4
+        1: `${ImgUrl}Saddle1.png`,
+        2: `${ImgUrl}Saddle2.png`,
+        3: `${ImgUrl}Saddle3.png`,
+        4: `${ImgUrl}Saddle4.png`
     }
     const Handles = {
-        1: Handle1,
-        2: Handle2,
-        3: Handle3,
-        4: Handle4
+        1: `${ImgUrl}Handle1.png`,
+        2: `${ImgUrl}Handle2.png`,
+        3: `${ImgUrl}Handle3.png`,
+        4: `${ImgUrl}Handle4.png`
     }
     const TypeStyle = {
         1 : "Defualt",

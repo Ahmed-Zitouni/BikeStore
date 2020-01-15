@@ -1,5 +1,4 @@
 import React, {useState, useContext, useEffect} from 'react'
-import Gear1 from '../Icons/Gear1.jpg'
 import {Collapse} from 'react-collapse';
 import { BikeContext } from '../context/BikeContext';
 import CartItemF from '../components/CartItemF'
