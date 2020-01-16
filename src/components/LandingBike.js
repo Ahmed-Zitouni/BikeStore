@@ -3,7 +3,6 @@ import Bike1All from '../Icons/Bike1All.png'
 import Bike2All from '../Icons/Bike2All.png'
 import Bike3All from '../Icons/Bike3All.png'
 import Bike4All from '../Icons/Bike4All.png'
-import {useSpring, animated} from 'react-spring'
 import { Gallery, GalleryImage } from 'react-gesture-gallery';
 
 import { BikeContext } from '../context/BikeContext';

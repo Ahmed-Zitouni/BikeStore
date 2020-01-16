@@ -73,7 +73,7 @@ const CheckOutPage = () => {
     const [Total, setTotal] = useState(0)
     const Proceed = (e) => {
         e.preventDefault()
-        //if(Sect1Fin && Sect2Fin && Sect3Fin) {
+        if(Sect1Fin && Sect2Fin && Sect3Fin) {
             swal({
                 icon: "success",
                 title: "Successful Purchase",
@@ -85,7 +85,7 @@ const CheckOutPage = () => {
             return ({...prevState, Cart : []
                 })
             })
-       // }
+        }
     }
     const ClickSect = (sect) => {
         if (sect === 1) setSect1Open(!Sect1Open)

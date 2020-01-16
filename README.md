@@ -12,6 +12,7 @@
 | ------ | ------ |
 | React | Used on the client-side because its fast, scalable, and simple |
 | SCSS | Made writing css cleaner |
-| React Router | Used quickly navigate pages in the application |
+| AWS CloudFront | A CDN used to server images quickly |
+| React Router | Used to quickly navigate pages in the application |
 | React Gallery | Used to integrate an image gallery on the landing page |
 | Git | Version Control |

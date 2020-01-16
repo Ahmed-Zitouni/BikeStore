@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react'
-import {FaWindowClose, FaTrashAlt } from 'react-icons/fa'
+import {FaWindowClose } from 'react-icons/fa'
 import { BikeContext } from '../context/BikeContext';
 import CartItems from './CartItems';
 import {Link} from 'react-router-dom'
