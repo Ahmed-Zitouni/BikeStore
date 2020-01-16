@@ -1,25 +1,9 @@
 import React, {useState, useContext} from 'react'
 import {FaLongArrowAltLeft} from 'react-icons/fa'
 import SaddleOff from '../Icons/Saddle.svg'
-import SaddleOn from '../Icons/SaddleOn.svg'
 import WheelOff from '../Icons/WheelOff.svg'
-import WheelOn from '../Icons/WheelOn.svg'
 import HandleOff from '../Icons/HandleIcon1.svg'
 import {Link} from 'react-router-dom'
-
-import Wheel1Sm from '../Icons/Wheel1Sm.png'
-import Wheel2Sm from '../Icons/Wheel2Sm.png'
-import Wheel3Sm from '../Icons/Wheel3Sm.png'
-import Wheel4Sm from '../Icons/Wheel4Sm.png'
-import Handle1Sm from '../Icons/Handle1Sm.png'
-import Handle2Sm from '../Icons/Handle2Sm.png'
-import Handle3Sm from '../Icons/Handle3Sm.png'
-import Handle4Sm from '../Icons/Handle4Sm.png'
-
-import Saddle1Sm from '../Icons/Saddle1Sm.png'
-import Saddle2Sm from '../Icons/Saddle2Sm.png'
-import Saddle3Sm from '../Icons/Saddle3Sm.png'
-import Saddle4Sm from '../Icons/Saddle4Sm.png'
 
 import { BikeContext } from '../context/BikeContext';
 const MoreInfoConfig = () => {

@@ -30,7 +30,7 @@ const LandingPage = () => {
             </div>
             <Link to = '/More-Info'>
                 <div onClick={() => console.log('Done')}>
-                    <h2>Custimize</h2>
+                    <h2>Customize</h2>
                 </div>
             </Link>
         </div>
