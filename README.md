@@ -16,3 +16,9 @@
 | React Router | Used to quickly navigate pages in the application |
 | React Gallery | Used to integrate an image gallery on the landing page |
 | Git | Version Control |
+
+<p align="center">
+    <a href="https://bikeshopc.netlify.com/">
+        <img src="https://portimgaz.s3.amazonaws.com/LiveSite.svg" alt="Open Live Site">
+    </a>
+</p>
