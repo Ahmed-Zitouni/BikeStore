@@ -7,7 +7,7 @@
 
 
 <p align="center">
-    <a href="https://bikeshopc.netlify.com/">
+    <a href="https://bikeshopc.netlify.com/" target="_blank">
         <img src="https://portimgaz.s3.amazonaws.com/LiveSite.svg" alt="Open Live Site">
     </a>
 </p>
