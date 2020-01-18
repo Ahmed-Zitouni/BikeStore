@@ -6,6 +6,13 @@
 [![img](https://portimgaz.s3.amazonaws.com/BSite.png)](https://bikeshopc.netlify.com/)
 
 
+<p align="center">
+    <a href="https://bikeshopc.netlify.com/">
+        <img src="https://portimgaz.s3.amazonaws.com/LiveSite.svg" alt="Open Live Site">
+    </a>
+</p>
+
+
 ### Development
 
 | Tech | Use Case |
@@ -17,8 +24,4 @@
 | React Gallery | Used to integrate an image gallery on the landing page |
 | Git | Version Control |
 
-<p align="center">
-    <a href="https://bikeshopc.netlify.com/">
-        <img src="https://portimgaz.s3.amazonaws.com/LiveSite.svg" alt="Open Live Site">
-    </a>
-</p>
+
