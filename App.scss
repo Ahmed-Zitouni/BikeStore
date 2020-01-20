@@ -1,0 +1,1911 @@
+$Main: #424e73;
+$Secondary: #ff5e57;
+$Grey: #f4f2f4;
+$Third: #3fbafb;
+$Grey: #ababb3;
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+	font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+#root {
+
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  line-height: 1;
+  font-family: 'Roboto', sans-serif;
+}
+ol, ul , li{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.LandingWrap {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex-direction: column;
+  display: flex;
+  >div:nth-child(1) {
+    z-index: 3;
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    background: $Main;
+    top: 0;
+    left: 0;
+  }
+}
+.Gallery__NavigationArrow {
+  opacity: 1 !important;
+  >button {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 0 !important;
+    background: rgba(23, 24, 29, 0.6) !important;
+    >svg {
+      color: white !important;
+      stroke-width: 3px !important;
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+}
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#CartItems {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background: $Secondary;
+    border-radius: 50%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+/*
+.BikeI img:nth-of-type(3) {
+  animation: SeatAn 1.3s ease-out;
+}
+.BikeI img:nth-of-type(4) {
+  animation: HandleAn 1.3s ease-out;
+}
+@keyframes SeatAn {
+  from { opacity: 0; transform:translateY(-10%)}
+  to   { opacity: 1; transform:translateY(0)}
+}
+@keyframes HandleAn {
+  from { opacity: 0; transform:translateY(-5%)}
+  to   { opacity: 1; transform:translateY(0)}
+}*/
+.Navbar {
+  user-select: none;
+  grid-area: n;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 75px;
+  /*height: 10vh;*/
+  z-index: 6;
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  width: 90%;
+  >div:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 50%;
+    color: white;
+  }
+  >div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    >a {
+      display: flex;
+      align-items: center;
+      width: 15%;
+      height: 100%;
+      cursor: pointer;
+    }
+    >a:nth-of-type(1) {
+      width: 20%;
+      >img {
+        min-width: 7rem;
+        width: 100%;
+        height: 35%;
+        margin-bottom: 15px;
+      }
+      >img:nth-of-type(2) {
+        display: none;
+      }
+    }
+    >div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      cursor: pointer;
+      >li {
+        font-size: 0.9rem;
+        flex-direction: row;
+        display: flex;
+        position: relative;
+        >svg {
+          margin-right: 10px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+.NavBox {
+  width: 100%;
+  height: 100%;
+  padding: 0px 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CartIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  >li {
+    font-size: 0.9rem;
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    >svg {
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+  }
+}
+.CartItems {
+  margin-top: 1.5rem;
+  height: 4rem;
+  font-size: 0.9rem;
+  >div:nth-of-type(1) {
+    flex: 1;
+    >img {
+      width: 50%;
+      height: 100%;
+      object-fit: contain;
+    }
+    >h2 {
+      width: 50%;
+      text-align: left;
+      font-weight: 700;
+    }
+  }
+  >div:nth-of-type(4) {
+    margin-top: 0.5rem;
+    input {
+      width: 1.0rem;
+      height: 1.3rem;
+      text-align: center;
+      border: '2px solid rgba(0,0,0,0)'
+    }
+  }
+  >div:nth-of-type(5) {
+    >svg {
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+  }
+  >div {
+    display: flex;
+    justify-content: center;
+    width: 13%;
+    >h2 {
+      width: 70%;
+      text-align: center;
+      margin-top: 0.5rem;
+      line-height: 1.2;
+    }
+  }
+}
+.CartPopUp {
+  width: 700px;
+  background-color: white;
+  padding: 0 20px 20px;
+  border: 1px solid #aaa;
+  border-radius: 0 0 4px;
+  border-top: none;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  position: absolute;
+  right: 0;
+  top: 60px;
+  display: flex; 
+  flex-direction: column;
+  cursor: default;
+  position: absolute;
+  color: #333;
+  >div:nth-of-type(1) {
+    align-self: flex-end;
+    margin-top: 1rem;
+    >svg {
+      width: 1.4rem;
+      height: 1.4rem;
+      cursor: pointer;
+    }
+  }
+  >div:nth-of-type(2) {
+    margin-top: 1rem;
+    display: inline-block;
+    >div:nth-of-type(1) {
+      height: 1rem;
+      border-bottom: 1px solid grey;
+    }
+    >div:nth-of-type(1) {
+      display: flex;
+      flex-direction: row;
+      >h1 {
+        width: 13%;
+        float: right;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      >h1:nth-of-type(1) {
+        flex: 1;
+        text-align: left;
+      }
+    }
+    >div{
+      display: flex;
+      flex-direction: column;
+    }
+    >div>div {
+      display: flex;
+    }
+  }
+  >div:nth-of-type(3) {
+    padding-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    >div:nth-of-type(1) {
+      display: flex;
+      align-self: flex-end;
+      align-items: center;
+      justify-content: flex-end;
+      width: 12rem;
+      height: 2.5rem;
+      font-size: 0.92rem;
+      color: #333;
+      font-weight: 700;
+      margin-right: 1.5rem;
+    }
+    >a:nth-of-type(1) {
+      display: flex;
+      align-self: flex-end;
+      align-items: center;
+      justify-content: center;
+      width: 12rem;
+      height: 2.5rem;
+      background: $Secondary;
+      font-size: 0.82rem;
+      color: white;
+      font-weight: 700;
+    }
+  }
+}
+.Card {
+  display: flex;
+  background: white;
+  height: 550px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  img {
+    width: 250px;
+    height: 147px;
+    position: absolute;
+  }
+  > div {
+    margin-top: 40%;
+    border-radius: 1.5rem;
+    width: 210px;
+    height: 100%;
+    background: $Main;
+    margin-right: 20px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.Card > div > div {
+  width: 80%;
+  height: 50px;
+  margin-top: 8rem;
+  background: red;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.Card > div > div > div:nth-of-type(1) {
+  width: 50%;
+  height: 50px;
+  background: coral;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.Card > div > div > div:nth-of-type(2) {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+  background: plum;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.Card > div > div > div:nth-of-type(2) > p {
+  text-align: center;
+}
+.ScrollList {
+  height: 78%;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.MoreInfo {
+  z-index: 3;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  /*
+  >div:nth-child(1) {
+    z-index: 1;
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    background: $Main;
+    top: 0;
+  }
+  */
+}
+
+.BikeDiv {
+  width: 61%;
+  z-index: 1;
+  height: 100%;
+  color: white;
+  >div {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .BikeN {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 10%;
+    width: 50%;
+    h1 {
+      font-weight: 800;
+      font-size: 1.7rem;
+      padding-right: 15%;
+      flex: 1 1;
+      text-align: left;
+      line-height: 1.4;
+    }
+    p {
+      cursor: pointer;
+      margin-right: 1.3rem;
+      font-size: 0.7rem;
+    }
+  }
+  .BikeI {
+    margin-top: 2rem;
+    height: 22rem;
+    width: 95%;
+    position: relative;
+    user-select: none;
+    >img:nth-child(1) {
+      z-index: 2;
+    }
+    img {
+      user-select: none;
+      align-self: center;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+  }
+  .BikeP {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    >h1 {
+      flex: 1 1;
+      text-align: center;
+      align-self: center;
+      font-weight: 700;
+      font-size: 1.7rem;
+    }
+    >div {
+      cursor: pointer;
+      background: $Secondary;
+      margin-right: 2rem;
+      width: 50%;
+      height: 80%;
+      border-radius: 0.4rem;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      h1:nth-of-type(1) {
+        color: white;
+        justify-self: center;
+        align-self: center;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-right: 0.7rem;
+        margin-bottom: 3px;
+      }
+      h1:nth-of-type(2) {
+        color: white;
+        justify-self: center;
+        align-self: center;   
+        font-weight: 700;
+        font-size: 1.1rem; 
+      }
+    }
+  }
+}
+.ConfigDiv {
+  width: 39%;
+  height: 100%;
+  >div:nth-of-type(1) {
+    margin-top: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    >div:nth-of-type(1) {
+      height: 10%;
+      width: 100%;
+      > a div {
+        display: flex;
+        height: 100%;
+        padding-left: 5%;
+        width: 5rem;
+        border-radius: 0.3rem;
+        border: 2px solid #f4f2f4;
+        cursor: pointer;
+        > svg {
+          width: 1.2rem;
+          height: 1.2rem;
+          font-weight: 100;
+          align-self: center;
+        }
+        > p {
+          font-size: 0.7rem;
+          font-weight: 700;
+          align-self: center;
+          margin-left: 1rem;
+        }
+      }
+    }
+    >div:nth-of-type(2) { 
+      margin-top: 2rem;
+      height: 90%;
+      >div:nth-of-type(1) {
+        font-size: 2.2rem;
+        font-weight: 700;
+        display: flex;
+        height: 15%;
+        >h1 {
+          align-self: flex-start;
+        }
+      }
+      >div:nth-of-type(2) { 
+        display: flex;
+        >div {
+          cursor: pointer;
+          border: 2px solid #f4f2f4;
+          margin: 10px 10px;
+          border-radius: 0.4rem;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          user-select: none;
+          width: 5rem;
+          height: 5rem;
+          >img {
+            user-select: none;
+            height: 80%;
+            width: 80%;
+          }
+        }
+
+      }
+      >div:nth-of-type(3) { 
+        height: 15%;
+        display: flex;
+        >h2 {
+          font-size: 1.2rem;
+          margin-top: 2rem;
+        }
+      }
+      >div:nth-of-type(4) { 
+        height: 35%;
+        display: flex;
+        user-select: none;
+        >div {
+          cursor: pointer;
+          border-radius: 0.9rem 0.9rem 0 0;
+          margin: 0px 5px;
+          background: #f8f3ee;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex: 1;
+          >img {
+            width: 90%;
+          }
+          >p {
+            color: #333;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+          }
+          >div {
+            width: 40%;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.CartAdded {
+  width: 39%;
+  height: 100%;
+  >div:nth-of-type(1) {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    height: 90%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+
+    >.CartAdded-top {
+      height: 2rem;
+      width: 100%;
+      >div {
+        display: flex;
+        height: 100%;
+        width: 18%;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        > svg {
+          width: 2rem;
+          height: 2rem;
+          font-weight: 100;
+          align-self: center;
+        }
+      }
+    }
+    >.CartAdded-MainText { 
+      margin-top: 1rem;
+      height: 90%;
+      >div:nth-of-type(1) {
+        margin-left: 0;
+        font-size: 2.2rem;
+        font-weight: 700;
+        display: flex;
+        height: 2.5rem;
+        >h1 {
+          align-self: flex-start;
+        }
+      }
+      >.CartAdded-buttons { 
+        height: 4.6rem;
+        margin-top: 1rem;
+        display: flex;
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: 90%;
+        > a {
+          div {
+            display: flex;
+            align-items: center;
+            padding: 0px 5px;
+            justify-content: center;
+          }
+        }
+        >a:nth-of-type(1) {
+          cursor: pointer;
+          border: 2px solid #f4f2f4;
+          margin: 10px 10px;
+          margin-left: 0px;
+          border-radius: 0.4rem;
+          background: white;
+          width: 60%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          user-select: none;
+        }
+        >a:nth-of-type(2){
+          color: white;
+          cursor: pointer;
+          border: 2px solid $Secondary;
+          margin: 10px 10px;
+          border-radius: 0.4rem;
+          background: $Secondary;
+          width: 40%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          user-select: none;
+          svg {
+            margin-left: 10px;
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+      }
+      >.CartAdded-SecText { 
+        height: 10%;
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+        >h2 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+.CartAdded-products { 
+  height: 15rem;
+  display: flex;
+  margin-top: 1rem;
+  >div:nth-of-type(2) {
+    margin: 0px 8%;
+  }
+  >div {
+    border-radius: 0.9rem 0.9rem 0 0;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    >img {
+      height: 30%;
+      width: 100%;
+      object-fit: contain;
+      align-self: center;
+    }
+    >p {
+      justify-self: flex-start;
+      font-size: 0.78rem;
+      display: flex;
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.3;
+      height: 25%;
+      width: 100%;
+    }
+    >div {
+      display: flex;
+      flex-direction: row;
+      margin-top: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      >h1 {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      >div {
+        cursor: pointer;
+        height: 1.8rem;
+        width: 1.8rem;
+        border: 2px solid #f4f2f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10%;
+        border-radius: 15%;
+        user-select: none;
+        p {
+          font-size: 1.2rem;
+          user-select: none;
+        }
+      }
+    }
+  }
+}
+.LandingMid {
+  display: flex;
+  flex-direction: row;
+  height: 72vh;
+  width: 90%;
+  align-self: center;
+}
+.Landing {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.LandingBike-Wrap {
+  grid-area: m;
+
+  >div:nth-child(1) {
+    z-index: 3;
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    background: $Main;
+    top: 0;
+    right: 0;
+    min-width: 16.8rem;
+  }
+}
+.LandingBike {
+  grid-area: b;
+  z-index: 5;
+  width: 60%;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  >div img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.Landing-Text {
+  padding-top: 5rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 40%;
+  div {
+    >h1 {
+      width: 100%;
+      text-align: left;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    >p {
+      align-self: flex-start;
+      margin-top: 2.5rem;
+      width: 85%;
+      font-size: 1rem;
+      color: grey;
+      text-align: left;
+      line-height: 1.8;
+    }
+  }
+    >a {
+      margin-top: 2rem;
+      margin-left: 2rem;
+      z-index: 3;
+    }
+    > a div {
+      cursor: pointer;
+      user-select: none;
+      height: 3.5rem;
+      width: 11rem;
+      background: $Secondary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.3rem;
+      h2 {
+        justify-self: center;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+}
+.BikeTypes {
+  margin-top: 2vh;
+  grid-area: s;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 16vh;
+  >div{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 5;
+    >div {
+      cursor: pointer;
+      user-select: none;
+      flex-direction: column;
+      width: 24%;
+      color: #cab7b7;
+      h2 {
+        font-size: 1rem;
+        font-weight: 700;
+        width: 100%;
+        text-align: left;
+      }
+      >div {
+        margin: 0.25rem 0px;
+        height: 0.4rem;
+        width: 100%;
+        background: #cab7b7;
+      }
+    }
+  }
+}
+.ChecKOutWrap {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  >div:nth-of-type(1) {
+    z-index: 3;
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: $Main;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+  }
+}
+.CheckOutPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  >h1{
+    font-size: 2rem;
+    width: 100%;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+    text-align: left;
+    margin-top: 4rem;
+    font-weight: 700;
+  }
+  >div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+.MainSection {
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 8px;
+}
+.PaymentInfo {
+  width: 58.3333333333%;
+  margin-bottom: 5rem;
+  >div{
+
+  >div:nth-of-type(1) {
+    user-select: none;
+    border-radius: 4px;
+    border-color: #ddd;
+    color: #333;
+    background-color: #f5f5f5;
+    display: flex;
+    border-color: #ddd;
+    flex-direction: row;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    >h1:nth-of-type(1) {
+      color: white;
+      height: 21px;
+      width: 20px;
+      background: #ff5e57;
+      font-size: 14px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+    >h1:nth-of-type(2) {
+      text-transform: uppercase;
+      color: #999;
+      height: 20px;
+      line-height: 20px;
+      margin-top: 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+}
+.Payment-Sect3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 5px;
+  color: #333;
+  >div:nth-of-type(1) {
+    >h1 {
+      font-weight: 700;
+      font-size: 18px;
+      flex: 1;
+      text-align: left;
+    }
+    >img {
+      justify-content: flex-end;
+      object-fit: contain;
+      
+    }
+  }
+  >div:nth-of-type(2) {
+    >input {
+      width: 25%;
+    }
+  }
+  >div:nth-of-type(3) {
+    >input {
+      width: 15%;
+    }
+  }
+  >div:nth-of-type(4) {
+    >input {
+      width: 15%;
+    }
+  }
+  >div{
+    padding: 8px 0px;
+    display: flex;
+    width: 100%;
+    >input {
+      font-size: 14px;
+      height: 20px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      margin: 0;
+    }
+    >h1 {
+      align-self: center;
+      font-size: 14px;
+      width: 40%;
+      text-align: left;
+    }
+  }
+}
+.Payment-Sect2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 5px;
+  color: #333;
+  >div:nth-of-type(1) {
+    >h1 {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 14px;
+    }
+  }
+  >div{
+    padding: 8px 0px;
+    display: flex;
+    width: 100%;
+    >input {
+      font-size: 14px;
+      height: 20px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      margin: 0;
+    }
+    >input:nth-of-type(1) {
+      margin-right: 10px;
+    }
+    >h1 {
+      font-weight: 700;
+      align-self: center;
+      font-size: 15px;
+    }
+  }
+}
+#BikeO {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: -10%;
+}
+#GearDrop {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  background: #fff;
+  overflow: hidden;
+  right: 0;
+  z-index: 1000;
+  top: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  height: 19rem;
+  width: 60%;
+  min-width: 22rem;
+  ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    >li:hover { 
+      background: #ddd;
+    }
+    >li {
+      color: #111;
+      letter-spacing: .2rem;
+      font-weight: 700;
+      margin-right: 30px;
+      margin: 0 auto;
+      background: #eee;
+      border: 1px solid #eee;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      line-height: 26px;
+      width: 65px;
+      display: block;
+      position: relative;
+      font-size: 35px;
+      cursor: pointer;
+    }
+  }
+  .Products { 
+    height: 13rem;
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 5%;
+    color: #333;
+    >div:nth-of-type(3) {
+      border-right: none;
+    }
+    >div {
+      width: 24%;
+      height: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #ddd;
+      >img {
+        height: 35%;
+        width: 100%;
+        object-fit: contain;
+        align-self: center;
+      }
+      >p {
+        font-size: 0.78rem;
+        text-align: center;
+        margin-top: 1rem;
+        line-height: 1.3;
+        height: 25%;
+        width: 60%;
+      }
+      >div {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        >h1 {
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+        >div {
+          cursor: pointer;
+          height: 1.6rem;
+          width: 1.8rem;
+          border: 2px solid #f4f2f4;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10%;
+          border-radius: 15%;
+          user-select: none;
+          p {
+            font-size: 1.2rem;
+            user-select: none;
+          }
+        }
+      }
+    }
+  }
+}
+#BikeDrop {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  background: #fff;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  top: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  height: 19rem;
+  a:nth-of-type(4) {
+    border-right: none;
+  }
+  a {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    width: 16.8%;
+    align-items: center;
+    border-right: 1px solid #eee;
+    cursor: pointer;
+    height: 50%;
+    img {
+      height: 65%;
+      object-fit: contain;
+      width: 100%;
+    }
+    h1 {
+      color: #333;
+      font-size: 1.14rem;
+      font-weight: 600;
+      padding-top: 10px;
+      text-align: left;
+      width: 85%;
+      padding-left: 15%;
+    }
+  }
+  >ul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    >li:hover { 
+      background: #ddd;
+    }
+    >li {
+      color: #111;
+      letter-spacing: .2rem;
+      font-weight: 700;
+      margin-right: 30px;
+      margin: 0 auto;
+      background: #eee;
+      border: 1px solid #eee;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      line-height: 26px;
+      width: 65px;
+      display: block;
+      position: relative;
+      font-size: 35px;
+      cursor: pointer;
+    }
+  }
+}
+#DropDown {
+  width: 100vw;
+  height: 30%;
+  left: -68px;
+  height: 24rem;
+  align-self: center;
+  margin-top: 0.5rem;
+  background-color: #121212;
+  box-shadow: 0 15px 50px -24px #000;
+  position: absolute;
+  top: 40px;
+  display: block;
+  flex-direction: column;
+  cursor: default;
+  position: absolute;
+  color: white;
+  padding-left: 5%;
+  display:none;
+  ul {
+    display: inline-block;
+    float: left;
+    padding-top: 3rem;
+    font-size: 1.05rem;
+    width: 20%;
+    li {
+      text-align: left;
+      padding: 10px 0px;
+      cursor: pointer;
+    }
+  }
+  img {
+    width: 76%;
+    float: left;
+    height: 100%;
+    object-fit: cover;
+    display: inline-block;
+    position: relative;
+  }
+}
+#DDMain {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: unset; 
+  border-radius: unset; 
+  color: unset; 
+  align-items: unset; 
+  justify-content: unset; 
+  >div {
+    top: 90px;
+    width: 19%;
+    color: #fff;
+    position: absolute;
+    right: 14.666667%;
+    text-align: left;
+    >h1 {
+      font-size: 42px;
+      line-height: 42px;
+      margin-top: 0;
+      font-family: DIN W01 Cond Medium,sans-serif;
+      font-weight: 400;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+    }
+    >p {
+      font-family: Helvetica,sans-serif;
+      font-size: 14px;
+      line-height: 28px;
+      margin-top: 20px;
+    }
+  }
+}
+.Payment-Sect1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  >div{
+    padding: 8px 0px;
+    display: flex;
+    width: 100%;
+    >input {
+      font-size: 14px;
+      height: 20px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+    }
+    >input:nth-of-type(1) {
+      margin-right: 3%;
+    }
+  }
+}
+.Payment-Sect1 {
+  >div:nth-of-type(1) {
+    >input {
+      width: 48.5%;
+    }
+  }
+  >div:nth-of-type(2) {
+    >input {
+      width: 48.5%;
+    }
+  }
+  >div:nth-of-type(3) {
+    >input {
+      width: 30%;
+    }
+    >input:nth-of-type(2) {
+      width: 67%;
+    }
+  }
+  >div:nth-of-type(4) {
+    >input {
+      width: 100%;
+      margin-right: 0px;
+    }
+  }
+  >div:nth-of-type(5) {
+    >input {
+      width: 30%;
+    }
+    >input:nth-of-type(2) {
+      width: 67%;
+    }
+  }
+}
+.PriceDetails {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 5rem;
+  >div:nth-of-type(1) {
+    color: $Secondary;
+    font-weight: 600;
+  }
+  >div:nth-of-type(3) {
+    border-bottom: 2px solid grey;
+  }
+  >div:nth-of-type(4) {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  >div {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 0;
+    >h2:nth-of-type(1) {
+      flex: 1 1;
+      display: flex;
+    }
+  }
+}
+.SubmitBtn {
+  >input:nth-of-type(1) {
+    height: 2.2rem;
+    width: 7rem;
+    background: #ff5e57;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+  }
+  >p {
+    align-self: center;
+    margin-left: 2rem;
+    color: red;
+    font-weight: 600;
+  }
+}
+.CartItemF {
+  color: #333;
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  height: 5.2rem;
+  background: white;
+  border-radius: 7px;
+  >img {
+    width: 27%;
+    object-fit: contain;
+    margin: 0px 0.5rem;
+    align-self: center;
+    height: 77%;
+  }
+  >div {
+    flex: 1;
+    margin-top: 0.9rem;
+    >h1 {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      line-height: 1.2;
+    }
+    >p {
+      font-size: 12px;
+      text-align: left;
+      color: grey;
+      margin-top: 0.5rem;
+    }
+  }
+  >h2:nth-of-type(1) {
+    margin-top: 0.9rem;
+    width: 10%;
+  }
+  >h2:nth-of-type(2) {
+    margin-top: 0.9rem;
+    width: 12%;
+    text-align: right;
+    margin-right: 5px;
+  }
+  >svg {
+    cursor: pointer;
+    margin: 0px 2%;
+    margin-top: 0.8rem;
+  }
+}
+.OrderInfo {
+  padding-left: 5.1%;
+  width: 37.666667%;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  color: white;
+  >h1 {
+    text-align: left;
+    margin: 0 0 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+    font-weight: 700;
+  }
+}
+.ScollListInner{
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+}
+@media only screen and (max-width: 1200px) {
+  .Landing-Text {
+  }
+  .Landing-Text > a {
+
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Landing-Text {
+    >a {
+      margin-left: 0px;
+    }
+    >div{
+      >h1 {
+        font-size: 2.3rem;
+      }
+      >p {
+        width: 100%;
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+        line-height: 1.5;
+      }
+    }
+  }
+  .LandingBike {
+    margin-left: 5%;
+  }
+}
+@media only screen and (max-width: 1090px) {
+
+  .CartItemF {
+    align-items: center;
+    font-size: 13px;
+    >img {
+      width: 20%;
+    }
+    >h2:nth-of-type(1) {
+      margin-top: 0px;
+    }
+    >h2:nth-of-type(2) {
+      margin-top: 0px;
+    }
+    >svg {
+      margin-top: 0px;
+    }
+    >div {
+      margin-top: 0px;
+      >h1 {
+        font-size: 13px;
+      }
+      >p {
+        font-size: 11px;
+      }
+    }
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) {
+    font-size: 1.7rem;
+  }
+  .BikeDiv > div:nth-of-type(3) {
+    >h1 {
+      font-size: 1.4rem;
+    }
+    >div h1:nth-of-type(2) {
+      font-size: 0.9rem;
+    }
+  }
+  .BikeDiv .BikeN > h1 {
+    font-size: 1.55rem;
+  }
+  .BikeDiv .BikeP { 
+    > div {
+      height: 70%;
+      h1:nth-of-type(1) {
+        font-size: 2rem;
+      }
+      h1:nth-of-type(2) {
+        font-size: 0.85rem;
+      }
+    }
+    >h1 {
+      font-size: 1.4rem;
+      margin-right: 10px;
+    }
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) {
+    height: 30%;
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > div:nth-of-type(1) {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-buttons > a:nth-of-type(2) svg {
+    margin-left: 1px;
+  }
+  .Navbar > div > div { 
+    color: #333;
+  }
+  .CartPopUp {
+    width: 80%;
+  }
+  .CartItems > div:nth-of-type(1) > img {
+    width: 30%;
+    margin-right: 15px;
+  }
+  .CartItems > div {
+    font-size: 13px;
+  }
+  .CheckOutPage > div {
+    flex-direction: column-reverse;
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-buttons {
+    width: 100%;
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) {
+    height: 25%;
+  }
+  .BikeDiv .BikeN > h1 {
+    font-size: 1.2rem;
+  }
+  .BikeDiv .BikeP { 
+    > div {
+      height: 60%;
+      h1:nth-of-type(1) {
+        font-size: 1.6rem;
+        margin-right: 0.3rem;
+      }
+      h1:nth-of-type(2) {
+        font-size: 0.75rem;
+      }
+    }
+    >h1 {
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
+  }
+  .ConfigDiv {
+    align-self: center;
+    >div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) {
+
+      >div {
+        width: 4.3rem;
+        height: 4.3rem; 
+      }
+    }
+  }
+  .ChecKOutWrap > div:nth-of-type(1) {
+    background: transparent;
+  }
+  .PaymentInfo {
+    width: 100%;
+  }
+  .OrderInfo {
+    width: 100%;
+    padding-left: 0px;
+  }
+  .PriceDetails {
+    color: #333;
+    margin-bottom: 5rem;
+  }
+  .CartItemF {
+    align-items: center;
+    font-size: 15px;
+    >img {
+      width: 20%;
+    }
+    >div {
+      margin-top: 0px;
+      >h1 {
+        font-size: 16px;
+      }
+      >p {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .NavBox {
+    color :#333;
+  }
+  .Navbar > div > a:nth-of-type(1) > img:nth-of-type(1) {
+    display: none;
+  }
+  .Navbar > div > a:nth-of-type(1) > img:nth-of-type(2) {
+    display: flex;
+  }
+  .Landing {
+    width: 99%;
+  }
+  #BikeDrop a h1 {
+    font-size: 78%;
+    padding-left: 0%;
+  }
+  .LandingMid {
+    flex-direction: column;
+    align-items: center;
+    height: unset;
+    opacity: 1;
+    animation: fadein 0.5s linear;
+  }
+  .LandingBike-Wrap > div:nth-child(1) {
+    background: transparent;
+  }
+  .Navbar > div {
+    color: #333;
+  }
+  .Landing-Text {
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+    >div{
+      margin-right: 10%;
+      width: 55%;
+      >h1 {
+        width: 100%;
+      }
+      >p {
+        width: 85%;
+        font-size: 0.85rem;
+        margin-top: 1.5rem;
+        line-height: 1.7;
+      }
+    }
+    >a {
+      align-self: flex-end;
+      width: 25%;
+      margin-bottom: 5%;
+      >div {
+        height: 3rem;
+        width: 100%;
+        >h2 {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .LandingBike {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .MoreInfo {
+    flex-direction: column;
+  }
+  .LandingWrap {
+    height: unset;
+  }
+  .LandingWrap > div:nth-child(1) {
+    background: transparent;
+  }
+  .BikeDiv {
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    >div {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 77%;
+    }
+    .BikeN {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      height: unset;
+      width: unset;
+    }
+    .BikeI {
+      margin-top: 1rem;
+      height: 15rem;
+      width: 95%;
+      position: relative;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .BikeP {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 22%;
+      align-self: center;
+      margin-top: 5rem;
+      h1 {
+        text-align: center;
+        align-self: flex-start;
+        font-weight: 700;
+        font-size: 2rem;
+        color: #3a4558;
+      }
+      >div {
+        width: 100%;
+        height: 3rem;
+        margin-right: 0px;
+        margin-bottom: 2rem;
+      }
+      >div h1:nth-of-type(1){
+        font-size: 1.9rem;
+        margin-left: 0.5rem;
+      }
+      >div h1:nth-of-type(2) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .ConfigDiv {
+    width: 85%;
+    align-self: center;
+    margin-bottom: 4rem;
+    >div:nth-of-type(1) { 
+      margin-top: 2rem;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      >div:nth-of-type(1) {
+        height: 2.5rem;
+      }
+      >div:nth-of-type(2) > div:nth-of-type(2) > div {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+    }
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-top {
+    display: none;
+  }
+  .BikeDiv {
+    justify-content: center;
+  }
+  .CartAdded {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    >div:nth-of-type(1) {
+      margin-left: 0px;
+    }
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-SecText > h2 {
+    font-size: 1.1rem;
+  }
+  .CartAdded > div:nth-of-type(1) > .CartAdded-MainText > .CartAdded-buttons > a:nth-of-type(2) {
+    margin-right: 20%;
+  }
+  .BikeDiv .BikeN > h1 {
+    font-size: 1rem;
+  }
+  .CartItems > div {
+    font-size: 10px;
+  }
+  .CartItems > div:nth-of-type(4) input{
+    width: 0.6rem;
+    height: 1rem;
+  }
+
+}
