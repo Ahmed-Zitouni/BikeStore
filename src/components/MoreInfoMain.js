@@ -73,18 +73,9 @@ const MoreInfoMain = (props) => {
             )
         })
     }
-    useEffect(() => {
-        if (HandleAnim) {
-            setHandleAnim(false)
-            setHandleAnim(true)
-        }
-        setHandleAnim(false)
-        setHandleAnim(true)
-        setTimeout(() => setHandleAnim(false), 1300)
-    }, [HandleSelected])
 
-    const AnimHandle = {animation : "HandleAn 1.3s linear"}
-    const AnimHSeat = {animation : "SeatAn 1.3s linear"}
+    //const AnimHandle = {animation : "HandleAn 1.3s linear"}
+    //const AnimHSeat = {animation : "SeatAn 1.3s linear"}
     return (
         <div className="BikeDiv">
             <div>
@@ -94,8 +85,8 @@ const MoreInfoMain = (props) => {
                 <div className = "BikeI">
                     <img src = {BikeIds[BikeSelected]}/>
                     <img src = {Wheels[WheelSelected]}/>
-                    <img style = {SeatAnim ? AnimHSeat : null} src = {Saddles[SaddleSelected]}/>
-                    <img style = {HandleAnim ? AnimHandle : null} src = {Handles[HandleSelected]}/>
+                    <img src = {Saddles[SaddleSelected]}/>
+                    <img src = {Handles[HandleSelected]}/>
                 </div>
             </div>
             {Stage === 1 &&
