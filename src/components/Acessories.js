@@ -46,7 +46,7 @@ useEffect(() => {
   return (
     <div className="CartAdded-products">
       <div>
-        <img src={Gear1} />
+        <img src="https://bikeimgst.s3.amazonaws.com/Gear1.jpg" />
         <p>Piston Floor Pump</p>
         <div>
           <h1>$30</h1>
@@ -60,7 +60,7 @@ useEffect(() => {
         </div>
       </div>
       <div>
-        <img src="https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/athu5ixyqd3gbvve95pt/58044_1.jpg" />
+        <img src="https://bikeimgst.s3.amazonaws.com/Gear2.jpg"/>
         <p>Wheel Rack 2x</p>
         <div>
           <h1>$56</h1>
@@ -74,7 +74,7 @@ useEffect(() => {
         </div>
       </div>
       <div>
-        <img src={Gear3} />
+        <img src= "https://bikeimgst.s3.amazonaws.com/Gear3.jpg" />
         <p>Giro Bike Helmet</p>
         <div>
           <h1>$40</h1>
