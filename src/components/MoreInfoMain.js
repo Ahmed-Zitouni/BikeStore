@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 
 import {AllData} from '../context/Data';
 import { BikeContext } from '../context/BikeContext';
@@ -14,6 +14,10 @@ const MoreInfoMain = (props) => {
     const SaddleSelected = Bikes.BikeData.Saddle
     const HandleSelected = Bikes.BikeData.Handle
     const BikeAllData = AllData.BikeInfo[BikeSelected - 1]
+
+    const [WheelAnim, setWheelAnim] = useState(false)
+    const [SeatAnim, setSeatAnim] = useState(false)
+    const [HandleAnim, setHandleAnim] = useState(false)
 
     let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
     const BikeIds = {
@@ -69,6 +73,18 @@ const MoreInfoMain = (props) => {
             )
         })
     }
+    useEffect(() => {
+        if (HandleAnim) {
+            setHandleAnim(false)
+            setHandleAnim(true)
+        }
+        setHandleAnim(false)
+        setHandleAnim(true)
+        setTimeout(() => setHandleAnim(false), 1300)
+    }, [HandleSelected])
+
+    const AnimHandle = {animation : "HandleAn 1.3s linear"}
+    const AnimHSeat = {animation : "SeatAn 1.3s linear"}
     return (
         <div className="BikeDiv">
             <div>
@@ -78,8 +94,8 @@ const MoreInfoMain = (props) => {
                 <div className = "BikeI">
                     <img src = {BikeIds[BikeSelected]}/>
                     <img src = {Wheels[WheelSelected]}/>
-                    <img src = {Saddles[SaddleSelected]}/>
-                    <img src = {Handles[HandleSelected]}/>
+                    <img style = {SeatAnim ? AnimHSeat : null} src = {Saddles[SaddleSelected]}/>
+                    <img style = {HandleAnim ? AnimHandle : null} src = {Handles[HandleSelected]}/>
                 </div>
             </div>
             {Stage === 1 &&

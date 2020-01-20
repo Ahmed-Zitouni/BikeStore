@@ -125,6 +125,21 @@ table {
     align-items: center;
     justify-content: center;
 }
+/*
+.BikeI img:nth-of-type(3) {
+  animation: SeatAn 1.3s ease-out;
+}
+.BikeI img:nth-of-type(4) {
+  animation: HandleAn 1.3s ease-out;
+}*/
+@keyframes SeatAn {
+  from { opacity: 0; transform:translateY(-10%)}
+  to   { opacity: 1; transform:translateY(0)}
+}
+@keyframes HandleAn {
+  from { opacity: 0; transform:translateY(-5%)}
+  to   { opacity: 1; transform:translateY(0)}
+}
 .Navbar {
   user-select: none;
   grid-area: n;
