@@ -131,7 +131,7 @@ table {
 }
 .BikeI img:nth-of-type(4) {
   animation: HandleAn 1.3s ease-out;
-}*/
+}
 @keyframes SeatAn {
   from { opacity: 0; transform:translateY(-10%)}
   to   { opacity: 1; transform:translateY(0)}
@@ -139,7 +139,7 @@ table {
 @keyframes HandleAn {
   from { opacity: 0; transform:translateY(-5%)}
   to   { opacity: 1; transform:translateY(0)}
-}
+}*/
 .Navbar {
   user-select: none;
   grid-area: n;
