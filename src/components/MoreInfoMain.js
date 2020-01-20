@@ -74,11 +74,16 @@ const MoreInfoMain = (props) => {
         })
     }
     useEffect(() => {
+        if (HandleAnim) {
+            setHandleAnim(false)
+            setHandleAnim(true)
+        }
         setHandleAnim(false)
-        //setHandleAnim(true)
+        setHandleAnim(true)
+        setTimeout(() => setHandleAnim(false), 1300)
     }, [HandleSelected])
 
-    const AnimHandle = {animation : "HandleAn 1.1s linear"}
+    const AnimHandle = {animation : "HandleAn 1.3s linear"}
     const AnimHSeat = {animation : "SeatAn 1.3s linear"}
     return (
         <div className="BikeDiv">
