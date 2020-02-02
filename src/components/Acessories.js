@@ -1,7 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { MdCheck } from "react-icons/md";
-import Gear1 from "../Icons/Gear1.jpg";
-import Gear3 from "../Icons/Gear3.jpg";
 import { BikeContext } from "../context/BikeContext";
 
 const Acessories = () => {
@@ -10,8 +8,9 @@ const { Bikes, dispatch } = useContext(BikeContext);
 const Display = Bikes.Display;
 const [items, setItems] = useState({ 1: false, 2: false, 3: false });
 const Cart = Bikes.Cart;
-const Clicked = {background: '#ff5e57', boarder: '2px solid #ff5e57'}
+const Clicked = {background: '#ff5e57', border: '2px solid #ff5e57'}
 const Products = Bikes.Products
+let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
 
 const AddCart = item => {
   let old = items[item];
@@ -46,7 +45,7 @@ useEffect(() => {
   return (
     <div className="CartAdded-products">
       <div>
-        <img src="https://bikeimgst.s3.amazonaws.com/Gear1.jpg" />
+        <img src={`${ImgUrl}Gear1.jpg`} />
         <p>Piston Floor Pump</p>
         <div>
           <h1>$30</h1>
@@ -60,7 +59,7 @@ useEffect(() => {
         </div>
       </div>
       <div>
-        <img src="https://bikeimgst.s3.amazonaws.com/Gear2.jpg"/>
+        <img src={`${ImgUrl}Gear2.jpg`}/>
         <p>Wheel Rack 2x</p>
         <div>
           <h1>$56</h1>
@@ -74,7 +73,7 @@ useEffect(() => {
         </div>
       </div>
       <div>
-        <img src= "https://bikeimgst.s3.amazonaws.com/Gear3.jpg" />
+        <img src= {`${ImgUrl}Gear3.jpg`} />
         <p>Giro Bike Helmet</p>
         <div>
           <h1>$40</h1>

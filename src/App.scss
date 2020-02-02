@@ -9,7 +9,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, tt, var,
+small, strike, sub, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -116,14 +116,14 @@ table {
   flex-direction: column;
 }
 #CartItems {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    background: $Secondary;
-    border-radius: 50%;
-    color: white;
-    align-items: center;
-    justify-content: center;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: $Secondary;
+  border-radius: 50%;
+  color: white;
+  align-items: center;
+  justify-content: center;
 }
 /*
 .BikeI img:nth-of-type(3) {
@@ -804,7 +804,7 @@ table {
         cursor: pointer;
         height: 1.8rem;
         width: 1.8rem;
-        border: 2px solid #f4f2f4;
+        border: 2px solid #dbdee3;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -955,7 +955,7 @@ table {
   >div:nth-of-type(1) {
     z-index: 3;
     position: absolute;
-    width: 40%;
+    width: 37%;
     height: 100%;
     background: $Main;
     top: 0;
@@ -984,33 +984,33 @@ table {
   }
 }
 .MainSection {
-  border: 1px solid #ddd;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   margin-bottom: 8px;
 }
 .PaymentInfo {
-  width: 58.3333333333%;
+  width: 53.333333%;
   margin-bottom: 5rem;
   >div{
 
   >div:nth-of-type(1) {
+    outline: none;
+    position: relative;
     user-select: none;
     border-radius: 4px;
-    border-color: #ddd;
-    color: #333;
-    background-color: #f5f5f5;
+    color: white;
+    font-weight: 600;
+    background-color: #f6f6f8;
     display: flex;
-    border-color: #ddd;
     flex-direction: row;
     height: 2.5rem;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+
     >h1:nth-of-type(1) {
       color: white;
       height: 21px;
       width: 20px;
-      background: #ff5e57;
+      background: $Third;
       font-size: 14px;
       border-radius: 50%;
       display: flex;
@@ -1037,7 +1037,6 @@ table {
   justify-content: center;
   flex-direction: column;
   padding: 15px;
-  padding-top: 5px;
   color: #333;
   >div:nth-of-type(1) {
     >h1 {
@@ -1049,7 +1048,7 @@ table {
     >img {
       justify-content: flex-end;
       object-fit: contain;
-      
+      height: 1.3rem;
     }
   }
   >div:nth-of-type(2) {
@@ -1072,17 +1071,20 @@ table {
     display: flex;
     width: 100%;
     >input {
-      font-size: 14px;
+      outline: none;
+      font-size: 13px;
       height: 20px;
-      padding: 6px 12px;
-      border: 1px solid #ccc;
-      margin: 0;
+      padding: 8px 12px;
+      color: #757575;
+      border: 2px solid #d5d7db;
+      border-radius: 5px;
     }
     >h1 {
       align-self: center;
       font-size: 14px;
       width: 40%;
       text-align: left;
+      line-height: 1.3;
     }
   }
 }
@@ -1142,7 +1144,8 @@ table {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: default;
   height: 19rem;
-  width: 60%;
+  width: 50%;
+  justify-content: center;
   min-width: 22rem;
   ul {
     position: absolute;
@@ -1174,13 +1177,13 @@ table {
     height: 13rem;
     display: flex;
     margin-top: 1rem;
-    margin-left: 5%;
+    width: 80%;
     color: #333;
     >div:nth-of-type(3) {
       border-right: none;
     }
     >div {
-      width: 24%;
+      width: 31%;
       height: 85%;
       display: flex;
       flex-direction: column;
@@ -1236,6 +1239,7 @@ table {
   position: absolute;
   background: #fff;
   overflow: hidden;
+  justify-content: center;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -1250,7 +1254,7 @@ table {
     margin-top: 35px;
     display: flex;
     flex-direction: column;
-    width: 16.8%;
+    width: 20%;
     align-items: center;
     border-right: 1px solid #eee;
     cursor: pointer;
@@ -1258,7 +1262,7 @@ table {
     img {
       height: 65%;
       object-fit: contain;
-      width: 100%;
+      width: 90%;
     }
     h1 {
       color: #333;
@@ -1369,21 +1373,51 @@ table {
     }
   }
 }
+#AutoFill {
+  background: #ff5e57;
+  color: white;
+  height: 75%;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75%;
+  width: 14%;
+  font-weight: 600;
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+}
+.Payment-Sect1 input:focus {
+  border: 2px solid $Main !important;
+}
+.Payment-Sect3 input:focus {
+  border: 2px solid $Main !important;
+}
+#Cart-NameF {
+  width: 36%;
+}
 .Payment-Sect1 {
+  padding: 15px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding: 15px;
   >div{
     padding: 8px 0px;
     display: flex;
     width: 100%;
     >input {
-      font-size: 14px;
+      outline: none;
+      font-size: 13px;
       height: 20px;
-      padding: 6px 12px;
-      border: 1px solid #ccc;
+      padding: 8px 12px;
+      color: #757575;
+      border: 2px solid #d5d7db;
+      border-radius: 5px;
+      }
+    >&::placeholder {
+      color: black;
     }
     >input:nth-of-type(1) {
       margin-right: 3%;
@@ -1427,10 +1461,11 @@ table {
 .PriceDetails {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   font-size: 15px;
   font-weight: 700;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
+  width: 90%;
   >div:nth-of-type(1) {
     color: $Secondary;
     font-weight: 600;
@@ -1470,9 +1505,20 @@ table {
     font-weight: 600;
   }
 }
+.Cart-End {
+  flex: 1 1;
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  >svg {
+    margin-top: 10%;
+  }
+}
 .CartItemF {
+  width: 90%;
   color: #333;
-  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   display: flex;
   flex-direction: row;
   height: 5.2rem;
@@ -1481,12 +1527,12 @@ table {
   >img {
     width: 27%;
     object-fit: contain;
-    margin: 0px 0.5rem;
+    padding: 0px 0.5rem;
     align-self: center;
     height: 77%;
+    border-left: 4px solid $Third
   }
   >div {
-    flex: 1;
     margin-top: 0.9rem;
     >h1 {
       font-size: 14px;
@@ -1518,18 +1564,25 @@ table {
   }
 }
 .OrderInfo {
-  padding-left: 5.1%;
-  width: 37.666667%;
+  margin-left: 14.1%;
+  width: 32.666667%;
   display: flex;
   flex-direction: column;
   z-index: 3;
-  color: white;
+  color: #333;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  height: max-content;
   >h1 {
     text-align: left;
-    margin: 0 0 2px;
+    margin: 2rem 0;
+    padding-bottom: 5px;
     text-transform: uppercase;
     border-bottom: 1px solid #ddd;
     font-weight: 700;
+    width: 90%;
   }
 }
 .ScollListInner{
@@ -1689,14 +1742,14 @@ table {
     }
   }
   .ChecKOutWrap > div:nth-of-type(1) {
-    background: transparent;
+    display: none;
   }
   .PaymentInfo {
     width: 100%;
   }
   .OrderInfo {
     width: 100%;
-    padding-left: 0px;
+    margin-left: 0px;
   }
   .PriceDetails {
     color: #333;
@@ -1706,7 +1759,10 @@ table {
     align-items: center;
     font-size: 15px;
     >img {
-      width: 20%;
+      width: 30%;
+    }
+    >h2 {
+      display: none;
     }
     >div {
       margin-top: 0px;
@@ -1725,6 +1781,18 @@ table {
   @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div {
+    padding-bottom: 14px;
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) {
+    margin-bottom: 1rem;
+  }
+  #BikeDrop {
+    justify-content: center;
+  }
+  #BikeDrop a {
+    width: 21.8%;
   }
   .NavBox {
     color :#333;
@@ -1764,18 +1832,20 @@ table {
       width: 55%;
       >h1 {
         width: 100%;
+        height: 5rem;
       }
       >p {
         width: 85%;
         font-size: 0.85rem;
         margin-top: 1.5rem;
         line-height: 1.7;
+        height: 12rem;
       }
     }
     >a {
-      align-self: flex-end;
+      align-self: center;
       width: 25%;
-      margin-bottom: 5%;
+      margin-top: 10%;
       >div {
         height: 3rem;
         width: 100%;
@@ -1837,10 +1907,11 @@ table {
       margin-top: 5rem;
       h1 {
         text-align: center;
-        align-self: flex-start;
+        align-self: center;
         font-weight: 700;
         font-size: 2rem;
         color: #3a4558;
+        width: 100%;
       }
       >div {
         width: 100%;
@@ -1851,11 +1922,15 @@ table {
       >div h1:nth-of-type(1){
         font-size: 1.9rem;
         margin-left: 0.5rem;
+        width: 25%;
       }
       >div h1:nth-of-type(2) {
         font-size: 0.7rem;
       }
     }
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2 {
+    margin-bottom: 1rem;
   }
   .ConfigDiv {
     width: 85%;
@@ -1903,8 +1978,114 @@ table {
     font-size: 10px;
   }
   .CartItems > div:nth-of-type(4) input{
-    width: 0.6rem;
+    width: 0.7rem;
     height: 1rem;
   }
-
+  .CartPopUp > div:nth-of-type(2) > div:nth-of-type(1) > h1:nth-of-type(2) {
+    display: none;
+  }
+  .CartPopUp > div:nth-of-type(2) > div:nth-of-type(1) > h1{
+    width: 18%;
+  }
+  .CartItems > div {
+    width: 18%;
+  }
+  .CartItems > div:nth-of-type(2) {
+    display: none;
+  }
+  .CartItems > div:nth-of-type(1) > img {
+    width: unset;
+    height: 90%;
+    margin-right: 0;
+  }
+  .CartItems > div:nth-of-type(1) > h2 {
+    display: none;
+  }
+  .CartPopUp > div:nth-of-type(2) > div:nth-of-type(1) {
+    margin-bottom: 2rem;
+  }
+  .CartItems > div:nth-of-type(5) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 80%;
+  }
+  .CartPopUp > div:nth-of-type(2) > div:nth-of-type(1) > h1:nth-of-type(5) {
+    margin-right: 0 !important;
+  }
+  .PaymentInfo > div > div:nth-of-type(1) > h1:nth-of-type(2) {
+    font-size: 12px;
+  }
+  #GearDrop .Products > div {
+    width: 32%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .CartItemF > div {
+    > h1 {
+      font-size: 12px;
+    }
+    >p {
+      font-size: 11px;
+    }
+  }
+  #AutoFill {
+    width: 4rem;
+  }
+  .Navbar > div > div:nth-of-type(1), .Navbar > div > div:nth-of-type(2){
+    display: none;
+  }
+  .ConfigDiv > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > h1 {
+    font-size: 1.5rem;
+  }
+  .Landing-Text  {
+    flex-direction: column;
+    >div {
+      width: 85%;
+      margin-right: 0;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      >h1 {
+        text-align: left;
+        align-self: center;
+        width: 100%;
+      }
+      >p {
+        width: 100%;
+        align-self: center;
+        height: unset;
+        margin-top: 1rem;
+      }
+    }
+    >a {
+      width: 55%;
+    }
+  }
+  .BikeDiv {
+    flex-direction: column;
+    >div {
+      width: 100%;
+    }
+    .BikeI {
+      margin-top: 0;
+    }
+    .BikeP {
+      flex-direction: row;
+      width: 85%;
+      margin-top: 0;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      align-self: center;
+      >h1 {
+        margin-right: 10%;
+      }
+      >div {
+        max-width: 150px;
+        margin-bottom: 0;
+        margin-right: 0px;
+      }
+    }
+  }
 }

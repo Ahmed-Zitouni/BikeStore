@@ -1,7 +1,5 @@
 import React, {useState, createContext} from 'react'
-import Bike1All from '../Icons/Bike1All.png'
-import Gear1 from '../Icons/Gear1.jpg'
-import Gear3 from '../Icons/Gear3.jpg'
+let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
 const BikeContext = createContext();
 const BikeContextProvider = (props) => {
     const [Bikes, dispatch] = useState({
@@ -17,7 +15,7 @@ const BikeContextProvider = (props) => {
                 Name: 'TCR Advanced 2 Disc Pro Compact', 
                 Color: 'Metallic Black',
                 Price: 1400,
-                Img: Bike1All
+                Img: `${ImgUrl}Bike1All.png`
             }
         },
         Cart: [],
@@ -34,7 +32,7 @@ const BikeContextProvider = (props) => {
                 Name: 'Piston Floor Pump', 
                 Color: 'Red',
                 Price: 30,
-                Img: Gear1
+                Img: `${ImgUrl}Gear1.jpg`
             },
             {
                 qty : 1,
@@ -42,7 +40,7 @@ const BikeContextProvider = (props) => {
                 Name: 'Wheel Rack 2x', 
                 Color: 'Metallic Black',
                 Price: 56,
-                Img: 'https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/athu5ixyqd3gbvve95pt/58044_1.jpg'
+                Img: `${ImgUrl}Gear2.jpg`
             },
             {
                 qty : 1,
@@ -50,7 +48,7 @@ const BikeContextProvider = (props) => {
                 Name: 'Giro Bike Helmet', 
                 Color: 'Black/Green',
                 Price: 40,
-                Img: Gear3
+                Img: `${ImgUrl}Gear3.jpg`
             }]
     })
     return (

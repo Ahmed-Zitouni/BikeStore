@@ -23,13 +23,15 @@ const CartItemF = (props) => {
     return (
         <div className = "CartItemF">
             <img src = {info.Img}/>
-            <div>
+            <div id = "Cart-NameF">
                 <h1>{info.Name}</h1>
                 <p>{info.Size}</p> 
             </div>
-            <h2>{info.qty}</h2>
-            <h2>${Price}</h2>
-            <FaTrashAlt onClick={() => RemoverFunc(number)}/>
+            <h2>{info.qty}x</h2>
+            <div className = "Cart-End">
+                <h2>${Price}</h2>
+                <FaTrashAlt onClick={() => RemoverFunc(number)}/>
+            </div>
         </div>
     )
 }

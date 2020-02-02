@@ -64,7 +64,7 @@ const CartPopUp = () => {
                 </div>
                 <div style = {IsScroll ? Scroll : null}>
                 {Items.map((info, x) => (
-                    <CartItems data = {info} num = {x}/>
+                    <CartItems key ={x} data = {info} num = {x}/>
                 ))}
                 </div>
             </div>

@@ -1,7 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { MdCheck } from "react-icons/md";
-import Gear1 from "../Icons/Gear1.jpg";
-import Gear3 from "../Icons/Gear3.jpg";
 import { BikeContext } from "../context/BikeContext";
 import {MdKeyboardArrowUp} from 'react-icons/md'
 
@@ -13,7 +11,7 @@ const [items, setItems] = useState({ 1: false, 2: false, 3: false });
 const Cart = Bikes.Cart;
 const Clicked = {background: '#ff5e57', boarder: '2px solid #ff5e57'}
 const Products = Bikes.Products
-
+let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
 const CloseAll = () => {
   dispatch(prevState => {
     return {
@@ -59,7 +57,7 @@ useEffect(() => {
     <div id="GearDrop">
     <div className = "Products">    
       <div>
-        <img src={Gear1} />
+        <img src={`${ImgUrl}Gear1.jpg`} />
         <p>Piston Floor Pump</p>
         <div>
           <h1>$30</h1>
@@ -73,7 +71,7 @@ useEffect(() => {
         </div>
       </div>
       <div>
-        <img src="https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/athu5ixyqd3gbvve95pt/58044_1.jpg" />
+        <img src={`${ImgUrl}Gear2.jpg`} />
         <p>Wheel Rack 2x</p>
         <div>
           <h1>$56</h1>
@@ -87,7 +85,7 @@ useEffect(() => {
         </div>
       </div>
       <div>
-        <img src={Gear3} />
+        <img src={`${ImgUrl}Gear3.jpg`} />
         <p>Giro Bike Helmet</p>
         <div>
           <h1>$40</h1>

@@ -1,12 +1,8 @@
 import React, {useContext, useState} from 'react'
-import Bike1All from '../Icons/Bike1All.png'
-import Bike2All from '../Icons/Bike2All.png'
-import Bike3All from '../Icons/Bike3All.png'
-import Bike4All from '../Icons/Bike4All.png'
 import { BikeContext } from '../context/BikeContext';
 import {MdKeyboardArrowUp} from 'react-icons/md'
 import {Link} from 'react-router-dom'
-
+let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
 
 
 const BikeDropDown = () => {
@@ -42,19 +38,19 @@ const BikeDropDown = () => {
 
         <li id="BikeDrop">
             <Link to="/More-Info" onClick = {() => BikeSelect(1)}>
-                <img src = {Bike1All}/>
+                <img src = {`${ImgUrl}Bike1All.png`}/>
                 <h1>REVOLT 3</h1>
             </Link>
             <Link to="/More-Info"  onClick = {() => BikeSelect(2)}>
-                <img src = {Bike2All}/>
+                <img src = {`${ImgUrl}Bike2All.png`}/>
                 <h1>YUKON 2</h1>
             </Link>
             <Link to="/More-Info"  onClick = {() => BikeSelect(3)}>
-                <img src = {Bike3All}/>
+                <img src = {`${ImgUrl}Bike3All.png`}/>
                 <h1>TCX ADVANCED</h1>
             </Link>
             <Link to="/More-Info"  onClick = {() => BikeSelect(4)}>
-                <img src = {Bike4All}/>
+                <img src = {`${ImgUrl}Bike4All.png`}/>
                 <h1>ROAM 4 DISC</h1>
             </Link>
             <ul>

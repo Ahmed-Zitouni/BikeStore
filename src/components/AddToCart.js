@@ -1,12 +1,9 @@
 import React, {useState, useContext, useEffect} from 'react'
 import {FaLongArrowAltRight} from 'react-icons/fa'
 import {MdAddShoppingCart, MdCheck} from 'react-icons/md'
-import Gear1 from '../Icons/Gear1.jpg'
-import Gear3 from '../Icons/Gear3.jpg'
 import { BikeContext } from '../context/BikeContext';
 import {Link} from 'react-router-dom'
 import Acessories from './Acessories'
-import Data from './Acessories'
 
 const AddToCart = () => {
     const {Bikes, dispatch} = useContext(BikeContext)

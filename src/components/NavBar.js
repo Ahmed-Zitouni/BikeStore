@@ -97,7 +97,7 @@ const NavBar = (props) => {
     }
     return (
         <div className = "Navbar">
-<div style = {Colors == 1 ? Dark : NormalColor}><Link to = "/" onClick = {() => CloseAll()}><img src = {Colors == 1 ? MainIcon : MainIconW}/><img src = {MainIcon} /></Link></div>
+            <div style = {Colors == 1 ? Dark : NormalColor}><Link to = "/" onClick = {() => CloseAll()}><img src = {Colors == 1 ? MainIcon : MainIconW}/><img src = {MainIcon} /></Link></div>
             <div style = {Colors == 1 ? NormalColor : Dark}>
                 <div style={DarkM ? DarkS : null}>
                     <div className = "NavBox" onClick = {() => OpenBike()}>

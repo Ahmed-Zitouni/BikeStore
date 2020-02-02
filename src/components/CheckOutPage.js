@@ -15,7 +15,7 @@ const CheckOutPage = () => {
     const [Sect2Fin, setSect2Fin] = useState(false)
     const [Sect3Fin, setSect3Fin] = useState(false)
     const [redirect, setRedirect] = useState(false)
-
+    let ImgUrl = "https://d3rs829cgcd3zf.cloudfront.net/"
 
     const [T1, setT1] = useState("")
     const [T2, setT2] = useState("")
@@ -79,13 +79,33 @@ const CheckOutPage = () => {
                 title: "Successful Purchase",
                 text: "Thank You For Shopping",
               }).then( x => {
+                dispatch(prevState => {
+                return ({...prevState, Cart : []
+                    })
+                })
                 setRedirect(true)
             })
-            dispatch(prevState => {
-            return ({...prevState, Cart : []
-                })
-            })
         }
+    }
+    const AutoFillData = () => {
+        setT1("Ahmed")
+        setT2("Zitouni")
+        setT3("12 E 69th St")
+        setT4("10021")
+        setT5("New York")
+        setT6("NY")
+        setT7("2013338888")
+        setT8("ExpressUser@gmail.com")
+        setT9("1234 1234 1234 1234")
+        setT10("999")
+        setT11("0520")
+        setEShip(0)
+        setSect1Fin(true)
+        setSect2Fin(true)
+        setSect3Fin(true)
+        setSect1Open(false)
+        setSect2Open(false)
+        setSect3Open(true)
     }
     const ClickSect = (sect) => {
         if (sect === 1) setSect1Open(!Sect1Open)
@@ -141,7 +161,8 @@ const CheckOutPage = () => {
                         <div className = "MainSection">
                             <div>
                                 <h1 style = {Sect1Fin ? SectDone : SectNotDone}>1</h1>
-                                <h1 style = {Sect1Open ? SectOpen : null} onClick={() => setSect1Open(!Sect1Open)}>{'SHIPPING ADDRESS & CONTACT INFO'}</h1>
+                                <h1 style = {Sect1Open ? SectOpen : null} onClick={() => setSect1Open(!Sect1Open)}>{'SHIPPING ADDRESS'}</h1>
+                                <div id = "AutoFill" onClick={() => AutoFillData()}><h2>AutoFill</h2></div>
                             </div>
                             <Collapse isOpened={Sect1Open}>
                             <form className = "Payment-Sect1">
@@ -196,7 +217,7 @@ const CheckOutPage = () => {
                             <form className = "Payment-Sect3" onSubmit = {(e) => Proceed(e)}>
                                 <div>
                                     <h1>Credit card</h1>
-                                    <img src = "https://dstqaa92re5c4.cloudfront.net/Images/Shared/Icons/icon_cards.png"/>
+                                    <img src = {`${ImgUrl}credit-card.png`}/>
                                 </div>
                                 <div>
                                     <h1>Number</h1>
@@ -212,7 +233,7 @@ const CheckOutPage = () => {
                                 </div>
                                 <div className = "SubmitBtn">
                                     <input style = {Sect1Fin && Sect2Fin && Sect3Fin ? FormDone : FormNotDone} type="submit" value="Proceed" />
-                                    <p>{!Sect1Fin && T8.length > 0 ? "Invalid Email" : ""}</p>
+                                    <p>{/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(T8) || T9.length === 0 ? "" : "Invalid Email"}</p>
                                 </div>
                             </form>
                             </Collapse>
@@ -223,7 +244,7 @@ const CheckOutPage = () => {
 
                 <div className = "OrderInfo">
                     <h1>Your Order</h1>
-                    {Cart.map((item, num) => <CartItemF remove = {RemoveItem} data = {item} numb = {num}/>)}
+                    {Cart.map((item, num) => <CartItemF key = {num} remove = {RemoveItem} data = {item} numb = {num}/>)}
                 
                     <div className = "PriceDetails">
                         <div>
