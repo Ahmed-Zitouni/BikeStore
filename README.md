@@ -3,7 +3,7 @@
 #### A Ecommerce Bicycle shop where users can customize bicycles and see how they look in real time. Built in React with responsive design and wide variety of products.
 
 
-[![img](https://portimgaz.s3.amazonaws.com/BSite.png)](https://bikeshopc.netlify.com/)
+[![img](https://portimgaz.s3.amazonaws.com/BikeSite.png)](https://bikeshopc.netlify.com/)
 
 
 <p align="center">
